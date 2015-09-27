@@ -1255,7 +1255,7 @@ header.header-style-3 .header-nav .nav-outer {
 }
 header.header-style-3 .header-nav .navbar-nav {
   float: left;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 @media (max-width: 1199px) {
   header.header-style-3 .header-nav .navbar-nav {
@@ -1357,6 +1357,12 @@ header.header-style-3 .header-nav .navbar-nav > li:active > a {
   header.header-style-3 .header-nav .navbar-nav > li:active .subnav {
     visibility: visible;
   }
+}
+#custom-cnt-search {
+  float: right;
+  padding: 12px 0px 12px 0px;
+  margin-right: 0px;
+  margin-left: 20px;
 }
 header.header-style-3 .header-nav .cnt-search {
   float: right;

@@ -57,27 +57,27 @@
             		</li>  
            	<?php } ?>
             <!--EZ Pages Menu Ends Here-->
+			  <ri id="custom-cnt-search" class="cnt-search">
+				<div class="input-group">
+					<!--<a class="fa fa-search search-button" href=""> </a>-->
+						<div class="field">
+							<!--Search Bar-->
+							<?php
+							   $text = str_replace("ENTER SEARCH KEYWORDS HERE", "Search entire store here..", "ENTER SEARCH KEYWORDS HERE");
+							   $content = "";
+							   $content .= zen_draw_form('quick_find_header', zen_href_link
+										  (FILENAME_ADVANCED_SEARCH_RESULT, '', 'SSL', false), 'get');
+							   $content .= zen_draw_hidden_field('main_page',FILENAME_ADVANCED_SEARCH_RESULT);
+							   $content .= zen_draw_hidden_field('search_in_description', '1') . zen_hide_session_id();
+							   $content .= '<div class="form-search">' . 
+								 zen_draw_input_field('keyword', '', 'class="input-text" maxlength="30" value="'.$text.'" onfocus="if(this.value == \''.$text.'\') this.value = \'\';" onblur="if (this.value == \'\') this.value = \'' . $text . '\';"') . '<span class="input-group-btn"><button class="btn btn-default" title="Search" type="submit"><i class="fa fa-search"></i></button></span></div>';
+							   $content .= "</form>";
+							   echo($content);
+							?>
+					  </div>
+				  </div>
+			  </ri>
+		  <!-- search ends here -->
           </ul>
-          <div class="cnt-search">
-          	<div class="input-group">
-            	<!--<a class="fa fa-search search-button" href=""> </a>-->
-                	<div class="field">
-                    	<!--Search Bar-->
-					   	<?php
-                           $text = str_replace("ENTER SEARCH KEYWORDS HERE", "Search entire store here..", "ENTER SEARCH KEYWORDS HERE");
-                           $content = "";
-                           $content .= zen_draw_form('quick_find_header', zen_href_link
-                                      (FILENAME_ADVANCED_SEARCH_RESULT, '', 'SSL', false), 'get');
-                           $content .= zen_draw_hidden_field('main_page',FILENAME_ADVANCED_SEARCH_RESULT);
-                           $content .= zen_draw_hidden_field('search_in_description', '1') . zen_hide_session_id();
-                           $content .= '<div class="form-search">' . 
-                             zen_draw_input_field('keyword', '', 'class="input-text" maxlength="30" value="'.$text.'" onfocus="if(this.value == \''.$text.'\') this.value = \'\';" onblur="if (this.value == \'\') this.value = \'' . $text . '\';"') . '<span class="input-group-btn"><button class="btn btn-default" title="Search" type="submit"><i class="fa fa-search"></i></button></span></div>';
-                           $content .= "</form>";
-                           echo($content);
-                      	?>
-                      	<!--Search Bar Ends-->
-                  </div>
-              </div>
-          </div>
 	      <!-- end dropMenuWrapper-->
     <div class="clearBoth"></div>
