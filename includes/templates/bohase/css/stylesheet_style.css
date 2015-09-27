@@ -117,6 +117,7 @@
 	}
 	.product-list .mix {
 		width: 100%;
+		height: auto;
 	}
 	.products-container.product-grid .item .list-view {
 		display: none;

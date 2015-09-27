@@ -5908,7 +5908,9 @@ a, button, a:hover, button:hover, a:focus, button:focus, a.active, button.active
 .newsletter #mc_embed_signup form {
 	padding:0
 }
-
+.grid-list {
+   height: 500px;
+}
 .grid-list, .specialsListBoxContents {
     float: left;
     margin: 0px !important;
