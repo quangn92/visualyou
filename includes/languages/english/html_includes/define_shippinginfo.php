@@ -1,3 +1,12 @@
-<p><strong>Shipping Sample Text ...</strong></p>
-<p>This section of text is from the Define Pages Editor located under Tools in the Admin.</p>
-<p>To remove this section of the text, delete it from the Define Pages Editor.</p>
+<body>
+
+<p align="center"><font size="6">
+<div>
+<a href="https://www.visual-you.com/develop/index.php?main_page=page&id=30">Shipping 
+USA</a></div>
+<div>
+<a href="https://www.visual-you.com/develop/index.php?main_page=page&id=29">
+Shipping International </a>
+</div></font></p>
+
+</body>
