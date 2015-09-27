@@ -1360,8 +1360,8 @@ header.header-style-3 .header-nav .navbar-nav > li:active > a {
 }
 #custom-cnt-search {
   float: right;
-  padding: 12px 0px 12px 50px;
-  margin-right: 0px;
+  padding: 12px 0px 12px 0px;
+  margin-right: 20px;
   margin-left: 20px;
 }
 header.header-style-3 .header-nav .cnt-search {

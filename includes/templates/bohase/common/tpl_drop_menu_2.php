@@ -57,7 +57,8 @@
             		</li>  
            	<?php } ?>
             <!--EZ Pages Menu Ends Here-->
-			  <ri id="custom-cnt-search" class="cnt-search">
+          </ul>
+		  <ri id="custom-cnt-search" class="cnt-search">
 				<div class="input-group">
 					<!--<a class="fa fa-search search-button" href=""> </a>-->
 						<div class="field">
@@ -78,6 +79,5 @@
 				  </div>
 			  </ri>
 		  <!-- search ends here -->
-          </ul>
 	      <!-- end dropMenuWrapper-->
     <div class="clearBoth"></div>
