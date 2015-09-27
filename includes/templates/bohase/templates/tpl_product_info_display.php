@@ -275,45 +275,40 @@
                 </div>
                 <div id="product-info-comments" class="tab-pane">
                     <div class="product-tab">
-                        <!--Begin Disqus http://www.samuelsena.com/zen-cart-disqus-comment-system/-->
-                        <?php if(DISQUS_STATUS != 'false') { ?>
-                        <div id="<?php echo DISQUS_ELEMENT_ID; ?>"></div>
-                        <script type="text/javascript">
-                            var disqus_url = '<?php echo str_replace("&amp;", "&", zen_href_link(FILENAME_PRODUCT_INFO, zen_get_all_get_params()));?>';
-                            var disqus_identifier = '<?php echo (int)$_GET['products_id'] .'-'. str_replace("&amp;", "&", zen_href_link(FILENAME_PRODUCT_INFO, zen_get_all_get_params())); ?>';
-                            var disqus_container_id = '<?php echo DISQUS_ELEMENT_ID; ?>';
-                            var disqus_domain = 'disqus.com';
-                            var disqus_shortname = '<?php echo DISQUS_SHORTNAME; ?>';
-                            var disqus_title = "<?php echo $products_name; ?>";
-                            var disqus_config = function () {
-                            var config = this; // Access to the config object
+						<!--Begin Disqus /-->
+						<?php if(DISQUS_STATUS != 'false') { ?>
+									
+						<div id="disqus_thread"></div>
+							<script type="text/javascript">
+								/* * * CONFIGURATION VARIABLES * * */
+								var disqus_shortname = 'lokisa';
+								
+								/* * * DON'T EDIT BELOW THIS LINE * * */
+								(function() {
+									var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+									dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+									(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+								})();
+							</script>
+							<noscript>Please enable JavaScript to view the 
+								<a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+							</noscript>
+									
+							<script type="text/javascript">
+								/* * * CONFIGURATION VARIABLES * * */
+								var disqus_shortname = 'lokisa';
+								
+								/* * * DON'T EDIT BELOW THIS LINE * * */
+								(function () {
+									var s = document.createElement('script'); s.async = true;
+									s.type = 'text/javascript';
+									s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+									(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+								}());
+							</script>
                         
-                                /*
-                                   All currently supported events:
-                                    * preData ?fires just before we request for initial data
-                                    * preInit - fires after we get initial data but before we load any dependencies
-                                    * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
-                                    * afterRender - fires when template is rendered but before we show it
-                                    * onReady - everything is done
-                                 */
-                        
-                                config.callbacks.preData.push(function() {
-                                    // clear out the container (its filled for SEO/legacy purposes)
-                                    document.getElementById(disqus_container_id).innerHTML = '';
-                                });
-                        
-                            };
-                        </script>
-                        <script type="text/javascript">
-                        (function() {
-                            var dsq = document.createElement('script'); dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = 'http://' + disqus_shortname + '.' + disqus_domain + '/embed.js';
-                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                        </script>
                         <?php } ?>
-                        <!--End Disqus http://www.samuelsena.com/zen-cart-disqus-comment-system/-->
+                        <!--End Disqus /-->
                     </div>
                 </div>
             </div>
