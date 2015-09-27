@@ -132,6 +132,8 @@ $store_map = $template_result->fields['store_map'];
 $newsletter_details = $template_result->fields['newsletter_details'];
 
 $facebook_link = $template_result->fields['facebook_link'];
+$instagram_link = $template_result->fields['instagram_link'];
+$tumblr_link = $template_result->fields['tumblr_link'];
 $twitter_link = $template_result->fields['twitter_link'];
 $pinterest_link = $template_result->fields['pinterest_link'];
 $google_link = $template_result->fields['google_link'];
