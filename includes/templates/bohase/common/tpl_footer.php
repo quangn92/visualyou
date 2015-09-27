@@ -62,7 +62,7 @@ if (!$flag_disable_footer) {
                         </div>
                     </div>
                     <?php } elseif($bottom_banners_style=="1") { ?>
-                    <div class="custom-banner <?php echo $bottom_banner_class;?>">
+                    <div class="bottom-banner <?php echo $bottom_banner_class;?>">
                         <div class="wide-banner cnt-strip">
                             <div class="image">
                                 <img alt="banner-images" src="<?php echo $template->get_template_dir
@@ -214,7 +214,16 @@ if (!$flag_disable_footer) {
     </div>
 </div>
 <footer>
-	
+
+    <?php
+
+        if ($this_is_home_page) {
+           
+           $instagram_banner = '<iframe src="/fashion/includes/templates/bohase/common/instagram_bottom_banner.html" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:100%; height: 300px; margin-top: 20px;" ></iframe>';
+           echo $instagram_banner;
+        }
+    ?>
+
     <?php
 	include zen_get_file_directory(DIR_WS_LANGUAGES . $_SESSION['language'] . '/html_includes/', FILENAME_DEFINE_BRANDS_INFOBOXES, 'false');
 	?>
@@ -230,7 +239,7 @@ if (!$flag_disable_footer) {
                             	<!-- Information column -->
                             	<?php
 								include zen_get_file_directory(DIR_WS_LANGUAGES . $_SESSION['language'] . '/html_includes/', FILENAME_DEFINE_FOOTER_INFORMATION_LINKS, 'false'); ?>
-    							<!-- Information column Ends -->
+    				<!-- Information column Ends -->
                                 <!-- My Account column -->
                                 <?php
 								include zen_get_file_directory(DIR_WS_LANGUAGES . $_SESSION['language'] . '/html_includes/', FILENAME_DEFINE_FOOTER_ACCOUNT_LINKS, 'false'); ?>
@@ -240,9 +249,13 @@ if (!$flag_disable_footer) {
 								include zen_get_file_directory(DIR_WS_LANGUAGES . $_SESSION['language'] . '/html_includes/', FILENAME_DEFINE_FOOTER_CUSTOMER_CARE_LINKS, 'false'); ?>
                                 <!-- Customer Care column Ends -->
                                 <!-- Get In touch column -->
-                                <?php
-								include zen_get_file_directory(DIR_WS_LANGUAGES . $_SESSION['language'] . '/html_includes/', FILENAME_DEFINE_FOOTER_GETIN_TOUCH_LINKS, 'false'); ?>
+                                <!-- <?php
+								include zen_get_file_directory(DIR_WS_LANGUAGES . $_SESSION['language'] . '/html_includes/', FILENAME_DEFINE_FOOTER_GETIN_TOUCH_LINKS, 'false'); ?> -->
                                 <!-- Get In touch column Ends -->
+                                <!-- More Love column -->
+                                <?php
+								include zen_get_file_directory(DIR_WS_LANGUAGES . $_SESSION['language'] . '/html_includes/', FILENAME_DEFINE_FOOTER_MORE_LOVE_LINKS, 'false'); ?>
+                                <!-- More Love column Ends -->
                             </div>
                        	</div>
                    	</div>
@@ -444,6 +457,7 @@ $(document).ready(function () {
         $(owlElementID + " .active .caption .fadeInRight-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
         $(owlElementID + " .active .caption .fadeInRight-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
     }
+
 
     $("#wide-slider").owlCarousel({
 		autoPlay: true,
