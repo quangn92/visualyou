@@ -1232,6 +1232,14 @@ header.header-style-3 .header-nav .navbar {
   margin: 0;
   box-shadow:none;
 }
+header.header-style-3 .custom-navbar-brand {
+    clear: both;
+    display: inline-block;
+    float: none;
+    height: auto;
+    margin: 25px 0px 0px 0px;
+    padding: 0;
+}
 header.header-style-3 .header-nav .navbar .navbar-brand {
     clear: both;
     display: inline-block;

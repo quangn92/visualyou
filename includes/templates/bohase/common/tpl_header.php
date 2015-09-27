@@ -295,7 +295,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
 			<div class="container-class <?php echo $container_class; ?>">
 				<div class="navbar-header">
                    	<div class="logo">
-                    	<a class="navbar-brand" href="#">
+                    	<a class="custom-navbar-brand" href="#">
                        		<img alt="<?php if($logo_image!=NULL){ echo "logo"; } ?>" src="<?php echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'images').'/logo/'.$logo_image;?>" />
                     	</a>
                     </div> 
