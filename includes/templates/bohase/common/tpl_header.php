@@ -321,7 +321,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
 <div class="body-container">
 	<!-- Slideshow-Container-->	
     <?php if($full_width_slideshow=='full_width') { ?>
-    <div class="wide-slider">
+    <div class="no-animate wide-slider wide-slider-large wide-slider-pagination m-t-30">
         <div id="wide-slider" class="owl-carousel owl-theme">
             <?php
                 while(!$slideshow_query_result->EOF) {
