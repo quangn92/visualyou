@@ -73,8 +73,8 @@ require($template->get_template_dir('tpl_template_custom_css.php',DIR_WS_TEMPLAT
 <!-- Theme File for Color -->
 <!--CSS files Ends-->
 <!--Google Fonts-->
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,500,600,700,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,500,600,700,900' rel='stylesheet' type='text/css'>
 <!--Google Fonts Ends-->
 <?php if (defined('FAVICON')) { 
 ?>
@@ -165,5 +165,11 @@ require($template->get_template_dir('tpl_template_custom_css.php',DIR_WS_TEMPLAT
 
 
 ?>
+<script language="javascript" type="text/javascript">
+//<![CDATA[
+var tl_loc0=(window.location.protocol == "https:")? "https://secure.comodo.net/trustlogo/javascript/trustlogo.js" :
+"https://www.trustlogo.com/trustlogo/javascript/trustlogo.js";
+document.writeln('<scr' + 'ipt language="JavaScript" src="'+tl_loc0+'" type="text\/javascript">' + '<\/scr' + 'ipt>');
+//]]>
+</script>
 <?php // NOTE: Blank line following is intended: ?>
-
