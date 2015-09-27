@@ -25,7 +25,7 @@
 ?>
 <!--// bof: <?php echo $box_id; ?> //-->
 <div class="leftBoxContainer facet-box" id="<?php echo str_replace('_', '-', $box_id ); ?>" style="width: <?php echo $column_width; ?>">
-<h2 class="leftBoxHeading lined" id="<?php echo str_replace('_', '-', $box_id) . 'Heading'; ?>"><?php echo $title; ?></h2>
+<h2 style="background-color: rgba(255, 255, 255, 0.1)" class="leftBoxHeading lined" id="<?php echo str_replace('_', '-', $box_id) . 'Heading'; ?>"><?php echo $title; ?></h2>
 <?php echo $content; ?>
 </div>
 <!--// eof: <?php echo $box_id; ?> //-->

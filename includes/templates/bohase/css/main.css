@@ -3713,9 +3713,9 @@ header.header-style-3 .header-nav .cnt-search .input-group button i {
   line-height: 36px;
 }
 .facet-box {
-  background: #f2f2f2;
-  padding: 18px 25px 15px;
-  margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0px 25px 15px 0px;
+    margin-bottom: 20px;
 }
 @media (max-width: 1191px) and (min-width: 992px) {
   .facet-box {

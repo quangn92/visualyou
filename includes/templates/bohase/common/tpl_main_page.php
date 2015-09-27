@@ -43,7 +43,7 @@
 </head>
 <?php
   if (in_array($current_page_base,explode(",",'products_new,products_all,specials,featured_products,checkout_shipping_address,checkout_payment,checkout_shipping,checkout_payment_address,checkout_confirmation,advanced_search_result,password_forgotten,account,account_history,account_history_info,account_edit,address_book,address_book_process,account_password,account_newsletters,account_notifications,gv_faq,gv_redeem,discount_coupon,advanced_search,checkout_success,time_out,page_not_found,product_reviews_write,reviews,product_reviews,product_reviews_info,logoff,create_account_success')) ) {
-	$flag_disable_left = true;
+	$flag_disable_right = true;
   }
   if (in_array($current_page_base,explode(",",'product_info,login,create_account,shopping_cart,contact_us,compare,wishlist'))) {
 		$flag_disable_left = true;
@@ -53,12 +53,12 @@
     $flag_disable_right = true;
   }*/
 	if ($current_page_base == 'index' and $_GET['cPath'] != '' ) {
-		$flag_disable_left = true;
-		//$flag_disable_right = true;
+		//$flag_disable_left = true;
+		$flag_disable_right = true;
 	}
 	if ($current_page_base == 'index' and $_GET['manufacturers_id'] != '' ) {
-		$flag_disable_left = true;
-		//$flag_disable_right = true;
+		//$flag_disable_left = true;
+		$flag_disable_right = true;
 	}
   $header_template = 'tpl_header.php';
   $footer_template = 'tpl_footer.php';
@@ -176,9 +176,9 @@
                                                 if (!isset($flag_disable_left) || !$flag_disable_left) {
 													if($flag_disable_right == true) { 
                                             ?>
-                                                <div id="left-column" class="m-t-30 col-lg-3 col-md-4 col-sm-12 col-xs-12 <?php echo $class_name; ?>">	
+                                                <div id="left-column" class="col-lg-3 col-md-custom col-sm-12 col-xs-12 <?php echo $class_name; ?>">	
                                                 <?php } else { ?>
-                                                <div id="left-column" class="m-t-30 col-lg-3 col-md-4 col-sm-6 col-xs-12 <?php echo $class_name; ?>">	
+                                                <div id="left-column" class="col-lg-3 col-md-custom col-sm-12 col-xs-12 <?php echo $class_name; ?>">	
                                                 <?php } ?>
                                                 <?php
                                                     /**
@@ -259,4 +259,20 @@
 </div>
 <?php } ?>
 </div>
+
+<div id="fb-root""></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="ssl"></div>
+<script language="JavaScript" type="text/javascript">
+TrustLogo("https://www.visual-you.com/images/comodo_secure_113x59_transp.png", "CL1", "none");
+</script>
+<a href="http://ssl.comodo.com" id="comodoTL">SSL Certificates</a>
+
 </body>
