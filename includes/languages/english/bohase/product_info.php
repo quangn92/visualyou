@@ -14,7 +14,7 @@ define('TEXT_DATE_ADDED', 'This product was added to our catalog on %s.');
 define('TEXT_DATE_AVAILABLE', 'This product will be in stock on %s.');
 define('TEXT_ALSO_PURCHASED_PRODUCTS', 'Customers also purchased');
 define('TEXT_PRODUCT_OPTIONS', 'Please Choose: ');
-define('TEXT_PRODUCT_MANUFACTURER', 'Manufactured by: ');
+define('TEXT_PRODUCT_MANUFACTURER', 'Brand: ');
 define('TEXT_PRODUCT_WEIGHT', 'Shipping Weight: ');
 define('TEXT_PRODUCT_QUANTITY', ' In Stock');
 define('TEXT_PRODUCT_MODEL', 'Model: ');
@@ -24,6 +24,8 @@ define('TEXT_ADDITIONAL_INFORMATION', 'Additional Information');
 define('TEXT_PRODUCT_DESCRIPTION', 'Description');
 define('TEXT_PRODUCT_REVIEWS', 'Reviews');
 define('TEXT_PRODUCT_COMMENTS', 'Comments');
+define('TEXT_SIZE_CHART', 'Size Chart');
+define('TEXT_DELIVERY', 'Delivery');
 
 
 

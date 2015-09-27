@@ -81,50 +81,33 @@
                     <?php } ?>
                     <?php }	?>
                     <div class="stock-container info-container">
-                         <?php if ( (($flag_show_product_info_model == 1 and $products_model != '') or ($flag_show_product_info_weight == 1 and $products_weight !=0) or ($flag_show_product_info_quantity == 1) or ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name))) ) { ?>
-                            <ul id="productDetailsList" class="floatingBox">
-                                <?php echo (($flag_show_product_info_model == 1 and $products_model !='') ? '<li>' . TEXT_PRODUCT_MODEL . $products_model . '</li>' : '') . "\n"; ?>
-                                <?php echo (($flag_show_product_info_weight == 1 and $products_weight !=0) ? '<li>' . TEXT_PRODUCT_WEIGHT .  $products_weight . TEXT_PRODUCT_WEIGHT_UNIT . 
-                                    '</li>'  : '') . "\n"; ?>
-                                <?php echo (($flag_show_product_info_quantity == 1) ? '<li><span class="units">' . TEXT_PRODUCT_QUANTITY . '</span></li>'  : '') . "\n"; ?>
-                                <?php echo (($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name)) ? '<li><span class="units">' . TEXT_PRODUCT_MANUFACTURER . 
-                                    $manufacturers_name . '</span></li>' : '') . "\n"; ?>
-                            </ul>
-                        <?php } ?>
-                    </div>
-                    <?php 
-                        $products_description_short = ltrim(substr($products_description, 0, 350) . '..'); 
-                        //Trims and Limits the desc
-                    ?>
-                    <div class="description-container">
-                        <?php echo stripslashes($products_description_short); ?>
-                        <!--bof Quantity Discounts table -->
-							<?php
-                              if ($products_discount_type != 0) { ?>
-                            <?php
-                            /**
-                             * display the products quantity discount
-                             */
-                             require($template->get_template_dir('/tpl_modules_products_quantity_discounts.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_products_quantity_discounts.php'); ?>
-                            <?php
-                              }
-                            ?>
-                        <!--eof Quantity Discounts table -->
-                    </div>
-                    <!--bof Attributes Module -->
-                    <?php
-                      if ($pr_attr->fields['total'] > 0) {
-                    ?>
-                    <?php
-                    /**
-                     * display the product atributes
-                     */
-                      require($template->get_template_dir('/tpl_modules_attributes.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_attributes.php'); ?>
-                    <?php
-                      }
-                    ?>
-                    <!--eof Attributes Module -->
-                    
+                      <!--bof Product Price block -->
+
+                      <div class="price-container info-container">
+                          <div class="row">
+                              <div class="col-sm-2">
+                                  <div class="price-box">
+                                      <span class="label">Price :</span>
+                                  </div>
+                              </div>
+                              <div class="col-sm-9">
+                              	  <div class="productprice-amount" style="display:inline-block">
+                                  	  <div id="productPrices" class="productGeneral">
+										  <?php
+                                              // base price
+                                              if ($show_onetime_charges_description == 'true') {
+                                                  $one_time = '<span >' . TEXT_ONETIME_CHARGE_SYMBOL . TEXT_ONETIME_CHARGE_DESCRIPTION . '</span><br />';
+                                              } else {
+                                                  $one_time = '';
+                                              }
+                                              echo $one_time . ((zen_has_product_attributes_values((int)$_GET['products_id']) and $flag_show_product_info_starting_at == 1) ? '' : '') . zen_get_products_display_price((int)$_GET['products_id']);
+                                          ?>
+										</div>
+                                  	</div>
+                              	</div>
+                        	</div>
+                      	</div>
+                      	
                     <!--bof Add to Cart Box -->
                     <?php
                     if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == '') {
@@ -153,9 +136,9 @@
 						}
                         $display_button = zen_get_buy_now_button($_GET['products_id'], $the_button);
                         
-                        if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" title="Add to Wishlist" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $_GET['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Add to Wishlist</a>';}else{ $wishlist_link='';}
+                        if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" title="Add to Wishlist" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $_GET['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
                         
-                        $compare_link='<a class="lnk" title="Add to Compare" href="javascript: compareNew('.$_GET['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Add to Compare</a>';
+                        $compare_link='<a class="lnk" title="Add to Compare" href="javascript: compareNew('.$_GET['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
                         
                       ?>
                       <?php if ($display_qty != '' or $display_button != '') { ?>
@@ -164,7 +147,7 @@
                               <div class="addtocart-info">
                                   <div class="cart_quantity col-lg-8 col-sm-12">
                                       <?php
-                                          echo $display_qty;
+                                          //echo $display_qty;
                                           echo $display_button;
                                           //echo $products_qty_box_status;
                                       ?>
@@ -183,35 +166,49 @@
                       <!--eof Add to Cart Box-->
                       <?php
                           //}
-                      ?>
-                      <!--bof Product Price block -->
+                      ?>                    	
+                      	
+                    </div>
 
-                      <div class="price-container info-container">
-                          <div class="row">
-                              <div class="col-sm-2">
-                                  <div class="price-box">
-                                      <span class="label">Price :</span>
-                                  </div>
-                              </div>
-                              <div class="col-sm-9">
-                              	  <div class="productprice-amount" style="display:inline-block">
-                                  	  <div id="productPrices" class="productGeneral">
-										  <?php
-                                              // base price
-                                              if ($show_onetime_charges_description == 'true') {
-                                                  $one_time = '<span >' . TEXT_ONETIME_CHARGE_SYMBOL . TEXT_ONETIME_CHARGE_DESCRIPTION . '</span><br />';
-                                              } else {
-                                                  $one_time = '';
-                                              }
-                                              echo $one_time . ((zen_has_product_attributes_values((int)$_GET['products_id']) and $flag_show_product_info_starting_at == 1) ? '' : '') . zen_get_products_display_price((int)$_GET['products_id']);
-                                          ?>
-										</div>
-                                  	</div>
-                              	</div>
-                        	</div>
-                      	</div>
-                  	</div>
-            	</div>
+                    <!--bof Attributes Module -->
+                    <?php
+                      if ($pr_attr->fields['total'] > 0) {
+                    ?>
+                    <?php
+                    /**
+                     * display the product atributes
+                     */
+                      require($template->get_template_dir('/tpl_modules_attributes.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_attributes.php'); ?>
+                    <?php
+                      }
+                    ?>
+                    <!--eof Attributes Module -->
+                    
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+			<div class="addthis_sharing_toolbox" style="margin: 15px 0px 15px 0px; width: 50%; float: left;" ></div>
+			<!-- Go to www.addthis.com/dashboard to customize your tools -->
+			<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ff0023c7cbb528" async="async"></script>
+			<div style="margin: 15px 0px 15px 0px; width: 50%; float: left;" > 
+			    <a href="https://www.visual-you.com/fashion/coupons-amp-specials-ezp-23.html">
+			    	<img src="images/icons/free_gift_learn_more.gif" alt="free gift"> </img>
+			    </a>
+			</div>
+		    <!-- Product model -->
+		    <div>
+		    <?php if ( (($flag_show_product_info_model == 1 and $products_model != '') or ($flag_show_product_info_weight == 1 and $products_weight !=0) or ($flag_show_product_info_quantity == 1) or ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name))) ) { ?>
+                            <ul id="productDetailsList" class="floatingBox">
+                                <?php echo (($flag_show_product_info_model == 1 and $products_model !='') ? '<li>' . TEXT_PRODUCT_MODEL . $products_model . '</li>' : '') . "\n"; ?>
+                                <?php echo (($flag_show_product_info_weight == 1 and $products_weight !=0) ? '<li>' . TEXT_PRODUCT_WEIGHT .  $products_weight . TEXT_PRODUCT_WEIGHT_UNIT . 
+                                    '</li>'  : '') . "\n"; ?>
+                                <?php echo (($flag_show_product_info_quantity == 1) ? '<li><span class="units">' . TEXT_PRODUCT_QUANTITY . '</span></li>'  : '') . "\n"; ?>
+                                <?php echo (($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name)) ? '<li><span class="units">' . TEXT_PRODUCT_MANUFACTURER . 
+                                    $manufacturers_name . '</span></li>' : '') . "\n"; ?>
+                            </ul>
+                        <?php } ?>
+                        </div>
+
+             </div> 
+              </div>
             </div>
             <!--bof free ship icon  -->
             <?php if(zen_get_product_is_always_free_shipping($products_id_current) && $flag_show_product_info_free_shipping) { ?>
@@ -227,6 +224,8 @@
                 <?php if(DISQUS_STATUS != 'false') { ?>
                 <li><a data-toggle="tab" href="#product-info-comments"><?php echo TEXT_PRODUCT_COMMENTS; ?></a></li>
                 <?php } ?>
+		<li><a data-toggle="tab" href="#size-chart"><?php echo TEXT_SIZE_CHART; ?></a></li>
+                <li><a data-toggle="tab" href="#delivery"><?php echo TEXT_DELIVERY; ?></a></li>
             </ul>
             <div class="tab-content">
                 <div id="description" class="tab-pane active">
@@ -273,39 +272,52 @@
                         ?>
                     </div>
                 </div>
+                
+                <div id="size-chart" class="tab-pane">
+                    <div class="product-tab">
+			<b>Size Chart Show here</b>
+                    </div>
+                </div>
+                
+                <div id="delivery" class="tab-pane">
+                    <div class="product-tab">
+			<b>Delivery show here</b>
+                    </div>
+                </div>
+                
                 <div id="product-info-comments" class="tab-pane">
                     <div class="product-tab">
-						<!--Begin Disqus /-->
-						<?php if(DISQUS_STATUS != 'false') { ?>
-									
-						<div id="disqus_thread"></div>
-							<script type="text/javascript">
-								/* * * CONFIGURATION VARIABLES * * */
-								var disqus_shortname = 'lokisa';
-								
-								/* * * DON'T EDIT BELOW THIS LINE * * */
-								(function() {
-									var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-									dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-									(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-								})();
-							</script>
-							<noscript>Please enable JavaScript to view the 
-								<a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-							</noscript>
-									
-							<script type="text/javascript">
-								/* * * CONFIGURATION VARIABLES * * */
-								var disqus_shortname = 'lokisa';
-								
-								/* * * DON'T EDIT BELOW THIS LINE * * */
-								(function () {
-									var s = document.createElement('script'); s.async = true;
-									s.type = 'text/javascript';
-									s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-									(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-								}());
-							</script>
+                        <!--Begin Disqus /-->
+                        <?php if(DISQUS_STATUS != 'false') { ?>
+                        
+                        <div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    /* * * CONFIGURATION VARIABLES * * */
+			    var disqus_shortname = 'lokisa';
+			    
+			    /* * * DON'T EDIT BELOW THIS LINE * * */
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<noscript>Please enable JavaScript to view the 
+				<a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+			</noscript>
+                        
+                        <script type="text/javascript">
+			    /* * * CONFIGURATION VARIABLES * * */
+			    var disqus_shortname = 'lokisa';
+			    
+			    /* * * DON'T EDIT BELOW THIS LINE * * */
+			    (function () {
+			        var s = document.createElement('script'); s.async = true;
+			        s.type = 'text/javascript';
+			        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+			        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+			    }());
+			</script>
                         
                         <?php } ?>
                         <!--End Disqus /-->

@@ -3554,10 +3554,10 @@ header.header-style-3 .header-nav .cnt-search .input-group button i {
   padding: 0;
 }
 .body-container .product-container .product-top .product-info .stock-container {
-  padding: 25px 0;
+  padding: 0px;
   border-top: 1px solid #f2f2f2;
   border-bottom: 1px solid #f2f2f2;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 .body-container .product-container .product-top .product-info .description-container {
   font-family: 'Roboto', sans-serif;
@@ -3568,7 +3568,7 @@ header.header-style-3 .header-nav .cnt-search .input-group button i {
   margin-bottom: 25px;
 }
 .body-container .product-container .product-top .product-info .quantity-container {
-  padding: 30px 0;
+  padding: 10px 0;
   border-top: 1px solid #f2f2f2;
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 0;
@@ -3610,9 +3610,9 @@ header.header-style-3 .header-nav .cnt-search .input-group button i {
   line-height: 21px !important;
 }
 .body-container .product-container .product-top .product-info .price-container {
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #f2f2f2;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 .body-container .product-container .product-top .product-info .price-container .label {
   line-height: 50px;
