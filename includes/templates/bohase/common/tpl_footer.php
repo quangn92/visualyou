@@ -62,7 +62,7 @@ if (!$flag_disable_footer) {
                         </div>
                     </div>
                     <?php } elseif($bottom_banners_style=="1") { ?>
-                    <div class="<?php echo $bottom_banner_class;?>">
+                    <div class="custom-banner <?php echo $bottom_banner_class;?>">
                         <div class="wide-banner cnt-strip">
                             <div class="image">
                                 <img alt="banner-images" src="<?php echo $template->get_template_dir

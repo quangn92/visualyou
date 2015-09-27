@@ -1921,6 +1921,9 @@ pre code {
   .col-lg-7 {
     width: 58.33333333%;
   }
+  .custom-bottom-banner {
+    width: 33.33333333%;
+  }
   .col-lg-6 {
     width: 50%;
   }

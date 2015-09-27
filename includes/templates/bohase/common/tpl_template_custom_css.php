@@ -170,7 +170,7 @@ $theme_bg_color = $template_result->fields['theme_bg_color'];
 	}
 	
 	if($bottom_banners_style=="1") {
-		$bottom_banner_class = "col-md-6 col-lg-6 col-xs-12 col-sm-6";
+		$bottom_banner_class = "col-md-6 custom-bottom-banner col-xs-12 col-sm-6";
 	}
 	elseif($bottom_banners_style=="2") {
 		$bottom_banner_class = " col-xs-12 col-sm-7 col-md-8 col-lg-8";
