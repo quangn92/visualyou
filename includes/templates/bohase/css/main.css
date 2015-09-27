@@ -1264,9 +1264,9 @@ header.header-style-3 .header-nav .navbar-nav {
   }
 }
 header.header-style-3 .header-nav .navbar-nav > li > a {
-  padding: 20px 25px;
+  padding: 20px 15px;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   color: #434343;
   line-height: 20px;
@@ -1360,7 +1360,7 @@ header.header-style-3 .header-nav .navbar-nav > li:active > a {
 }
 #custom-cnt-search {
   float: right;
-  padding: 12px 0px 12px 0px;
+  padding: 12px 0px 12px 50px;
   margin-right: 0px;
   margin-left: 20px;
 }
