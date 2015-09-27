@@ -22,10 +22,8 @@
 			</div>
 		</div>
 	</div>
-	<!-- Brands Slider Wrapper Ends -->
     <?php } ?>
-
-	<?php if($display_info_boxes=="yes") { ?>
+    <?php if($display_info_boxes=="yes") { ?>
     <!-- Info Boxes Container -->
     <div class="info-boxes wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
         <div class="<?php echo $container_class; ?>">
@@ -34,65 +32,70 @@
                     <div class="col-md-3 col-sm-6 col-xs-12 col-md-3">
                         <div class="info-box">
                             <div class="row">
+                            <a href="https://trustlogo.com/ttb_searcher/trustlogo?v_querytype=W&v_shortname=CL1&v_search=http://www.visual-you.com/catalog/&x=6&y=5" target="_blank">
                                 <div class="col-xs-2">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-truck fa-stack-1x fa-inverse"></i>
+                                        <i class="fa fa-lock fa-stack-1x fa-inverse">
+                                        </i>                                     
                                     </span>
                                 </div>
                                 <div class="col-xs-10">
-                                    <h4>FREE DELIVERY</h4>
-                                    <h6>On Oder Above $680.00</h6>
+                                    <h4>SSL SECURED</h4>
+                                    <h6>Safe & Secured shopping</h6>
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12 col-md-3">
                         <div class="info-box">
                             <div class="row">
+                            <a href="https://www.visual-you.com/develop/shippinginfo.html ">
                                 <div class="col-xs-2">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-money fa-stack-1x fa-inverse"></i>
+                                        <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </div>
                                 <div class="col-xs-10">
-                                    <h4>100% Money back</h4>
-                                    <h6>30 Day Money Back Guarantee.</h6>
+                                    <h4>WORLDWIDE</h4>
+                                    <h6>USPS.com Shipping</h6>
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12 col-md-3">
                         <div class="info-box">
                             <div class="row">
+                            <a href="https://www.visual-you.com/develop/index.php?main_page=page&id=32">
                                 <div class="col-xs-2">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                                        <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </div>
                                 <div class="col-xs-10">
-                                    <h4>CALL TO ORDER</h4>
-                                    <h6>Call Phone: 84. 868 868 / 868 888</h6>
+                                    <h4>Visual You </h4>
+                                    <h6>Donates</h6>
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12 col-md-3">
                         <div class="info-box">
                             <div class="row">
+                            <a href="http://www.bbb.org/losangelessiliconvalley/business-reviews/internet-shopping/visual-you-in-san-jose-ca-1000004593" target="_blank">
                                 <div class="col-xs-2">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+                                        <i class="fa fa-fire fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </div>
                                 <div class="col-xs-10">
-                                    <h4>online support</h4>
-                                    <h6>24*7 Free Support</h6>
+                                    <h4>BBB A+ </h4>
+                                    <h6>Accredited Business</h6>
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
                     </div>
                 </div>
