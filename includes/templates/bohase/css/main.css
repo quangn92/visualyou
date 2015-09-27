@@ -4035,7 +4035,7 @@ footer .info-boxes .info-box h6 {
   margin-bottom: 5px;
 }
 footer .links-social {
-  background: #181818;
+  background: #B2D7ED;
   padding-top: 20px;
   padding-bottom: 50px;
 }
@@ -4109,7 +4109,7 @@ footer .links-social .newsletter .input-group {
   width:100%;
 }
 footer .links-social .newsletter .input-group #mc_embed_signup input.email {
-  	background: #060606 none repeat scroll 0 0;
+  	background: #FFFFFF none repeat scroll 0 0;
     border: 1px solid #343434;
     border-radius: 0;
     box-shadow: none;
@@ -4120,7 +4120,7 @@ footer .links-social .newsletter .input-group #mc_embed_signup input.email {
     padding: 8px 0;
 }
 footer .links-social .newsletter .input-group #mc_embed_signup input.button {
-  background: #343434;
+  background: #75C6F5;
   border: none;
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
@@ -4149,7 +4149,7 @@ footer .copyright {
   line-height: 20px;
   padding: 20px 0;
   text-align: left;
-  background: #060606;
+  background: #BBBEC0;
 }
 .body-style-6 footer .copyright {
 	padding : 20px 50px;
