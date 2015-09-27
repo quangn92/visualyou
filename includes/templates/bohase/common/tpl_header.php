@@ -295,9 +295,29 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
 			<div class="container-class <?php echo $container_class; ?>">
 				<div class="navbar-header">
                    	<div class="logo">
-                    	<a class="custom-navbar-brand" href="#">
-                       		<img alt="<?php if($logo_image!=NULL){ echo "logo"; } ?>" src="<?php echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'images').'/logo/'.$logo_image;?>" />
-                    	</a>
+						<div style="position: relative; width: 35%; height: 134px; float:left;"></div>
+						<div style="position: relative; width: 30%; height: 100%; float: left;">
+							<a class="custom-navbar-brand" href="#">
+								<img alt="<?php if($logo_image!=NULL){ echo "logo"; } ?>" src="<?php echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'images').'/logo/'.$logo_image;?>" />
+							</a>
+						</div>
+						<div style="position: relative; width: 35%; height: 134px; float:left;">
+						<div style="position: absolute; bottom: 0; right: 0;">
+							<div class="fb-like" style=""data-href="<?php echo $facebook_link; ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+
+								<a target="_blank" href="<?php echo $instagram_link; ?>">
+								<img style="margin-bottom: 15px;" src="https://www.visual-you.com/images/new_social_mini_ig.gif" width="25" height="25"></a>
+
+								<a target="_blank" href="<?php echo $tumblr_link; ?>">
+								<img style="margin-bottom: 15px;" src="https://www.visual-you.com/images/new_social_mini__tumblr.gif" width="25" height="25" alt="s"></a>
+
+								<a target="_blank" href="<?php echo $twitter_link; ?>">
+								<img style="margin-bottom: 15px;" src="https://www.visual-you.com/images/new_social_mini_twitter.gif" width="25" height="25"></a>
+
+								<a target="_blank" href="<?php echo $pinterest_link; ?>">
+								<img style="margin-bottom: 15px;" src="https://www.visual-you.com/images/new_social_mini_pinterest.gif" width="25" height="25"></a>
+							</div>
+						</div>
                     </div> 
                 </div>
                 <div class="nav-bg-class <?php echo $nav_bg_class; ?>">
