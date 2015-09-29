@@ -151,7 +151,7 @@
     ?>
 
 	<div class="buttonRow back"><?php echo zen_back_link() . zen_image_button(BUTTON_IMAGE_CONTINUE_SHOPPING, BUTTON_CONTINUE_SHOPPING_ALT) . '</a>'; ?></div>
-	<div class="buttonRow forward checkout_button"><?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHECKOUT, BUTTON_CHECKOUT_ALT) . '</a>'; ?></div>
+	<div class="custom-checkout-button forward checkout_button"><?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL') . '"><img src="/images/proceed_secure_checkout01_new.gif" alt="checkout"></img></a>'; ?></div>
 
 	<?php
     // show update cart button

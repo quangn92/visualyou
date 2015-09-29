@@ -234,6 +234,7 @@ input[type="checkbox"]
 		-o-transition: all 0.3s ease-in-out 0s;
 		-ms-transition: all 0.3s ease-in-out 0s;
 }*/
+
 .button,input[type="submit"],input[type="reset"],input[type="button"],.readmore,button, #shoppingCartDefault .buttonRow, .change_address > a, #pageThree .buttonRow.back > a, #pageFour .buttonRow.back > a, #pageTwo .buttonRow.back > a, #discountcouponInfo .content .buttonRow.forward > a, #wishlist .cssButton.button_back, #wishlist .cssButtonHover.button_back.button_backHover {
     display: inline-block;
     letter-spacing: 1px;
@@ -269,6 +270,39 @@ input[type="checkbox"]
     width: 100%;
 	padding:1em 0;
 }
+.custom-checkout-button {
+    background: #FFF none repeat scroll 0% 0%;
+    text-transform: none;
+    font-family: "Roboto",sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    letter-spacing: 1px;
+    padding: 0px;
+    width: auto !important;
+    vertical-align: middle;
+    float: right;
+    color: #FFF;
+    line-height: 21px;
+    border: medium none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.paypal-button {
+    background: #FFF none repeat scroll 0% 0%;
+    text-transform: none;
+    font-family: "Roboto",sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    width: auto !important;
+    display: inline-block;
+    color: #FFF;
+    line-height: 21px;
+    border: medium none;
+    border-radius: 4px;
+}
+
 #ezPageBoxList li {
     margin: 0;
     padding: 0.2em 0;
