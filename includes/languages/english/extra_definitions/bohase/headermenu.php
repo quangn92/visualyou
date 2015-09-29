@@ -28,7 +28,7 @@ define('HEADER_TITLE_FEATURED_PRODUCTS','Featured');
 define('HEADER_TITLE_SEARCH','Search');
 
 define('HEADER_TITLE_CATEGORIES','Shop');
-define('HEADER_TITLE_EZPAGES','Ez-Pages');
+define('HEADER_TITLE_EZPAGES','More ...');
 define('HEADER_TITLE_MANUFACTURER','Brands');
 define('HEADER_TITLE_INFORMATION','Information');
 define('HEADER_TITLE_SHIPPING_INFO','Shipping Info');
