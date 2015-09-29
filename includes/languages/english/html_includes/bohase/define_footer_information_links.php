@@ -1,7 +1,7 @@
 <div class="col-sm-3">
     								<div class="links">
                                     	<h3 class="title"><?php echo FOOTER_TITLE_INFORMATIONS; ?></h3>
-                                        <ul>
+                                        <ul>																					<li class="contact_us">                                                <a href="https://www.visual-you.com/catalog/about-us-ezp-28.html">                                                    About Us                                                </a>                                            </li>
                                         	<?php if (DEFINE_SHIPPINGINFO_STATUS <= 1) { ?>
                                                 <li>
                                                     <a href="<?php echo zen_href_link(FILENAME_SHIPPING, '', 'SSL'); ?>">
@@ -29,12 +29,7 @@
                                                         <?php echo HEADER_TITLE_SITE_MAP; ?>
                                                     </a>
                                                 </li>
-                                            <?php } ?>
-                                            <li class="contact_us">
-                                                <a href="<?php echo zen_href_link(FILENAME_CONTACT_US, '', 'SSL'); ?>">
-                                                    <?php echo HEADER_TITLE_CONTACT_US; ?>
-                                                </a>
-                                            </li>	
+                                            <?php } ?>	
                                         </ul>
                                   	</div>
                                	</div>
