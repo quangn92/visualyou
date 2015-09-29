@@ -8,10 +8,10 @@
  */
 
 // page title
-define('TITLE', 'Bohase');
+define('TITLE', 'Visual You');
 
 // Site Tagline
-define('SITE_TAGLINE', 'A Premium Responsive Zen Cart Theme');
+define('SITE_TAGLINE', 'Fashion Incorporated');
 
 // Custom Keywords
 define('CUSTOM_KEYWORDS', 'ecommerce, open source, shop, online shopping, store, responsive, zen cart template, zencart, zen cart theme');
@@ -21,7 +21,7 @@ define('CUSTOM_KEYWORDS', 'ecommerce, open source, shop, online shopping, store,
   define('HOME_PAGE_META_KEYWORDS', '');
 
   // NOTE: If HOME_PAGE_TITLE is left blank (default) then TITLE and SITE_TAGLINE will be used instead.
-  define('HOME_PAGE_TITLE', 'Bohase - Responsive Zen cart Template'); // usually best left blank
+  define('HOME_PAGE_TITLE', 'Visual You - Fashion Incorporated'); // usually best left blank
 
 
 // EZ-Pages meta-tags.  Follow this pattern for all ez-pages for which you desire custom metatags. Replace the # with ezpage id.
@@ -60,5 +60,4 @@ define('CUSTOM_KEYWORDS', 'ecommerce, open source, shop, online shopping, store,
   define('ROBOTS_PAGES_TO_SKIP','login,logoff,create_account,account,account_edit,account_history,account_history_info,account_newsletters,account_notifications,account_password,address_book,advanced_search,advanced_search_result,checkout_success,checkout_process,checkout_shipping,checkout_payment,checkout_confirmation,cookie_usage,create_account_success,contact_us,download,download_timeout,customers_authorization,down_for_maintenance,password_forgotten,time_out,unsubscribe,info_shopping_cart,gv_faq,gv_redeem,gv_send,popup_image,popup_image_additional,product_reviews_write,ssl_check,shopping_cart,no_account,order_status');
   
   define('FAVICON', 'favicon.ico');
-
 
