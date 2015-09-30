@@ -224,7 +224,7 @@
                 <?php if(DISQUS_STATUS != 'false') { ?>
                 <li><a data-toggle="tab" href="#product-info-comments"><?php echo TEXT_PRODUCT_COMMENTS; ?></a></li>
                 <?php } ?>
-		<li><a data-toggle="tab" href="#size-chart"><?php echo TEXT_SIZE_CHART; ?></a></li>
+		<!--<li><a data-toggle="tab" href="#size-chart"><?php echo TEXT_SIZE_CHART; ?></a></li>-->
                 <li><a data-toggle="tab" href="#delivery"><?php echo TEXT_DELIVERY; ?></a></li>
             </ul>
             <div class="tab-content">
@@ -273,11 +273,12 @@
                     </div>
                 </div>
                 
-                <div id="size-chart" class="tab-pane">
+            <!--    
+             <div id="size-chart" class="tab-pane">
                     <div class="product-tab">
 			<b>Size Chart Show here</b>
                     </div>
-                </div>
+                </div>-->
                 
                 <div id="delivery" class="tab-pane">
                     <div class="product-tab">
