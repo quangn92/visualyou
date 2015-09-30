@@ -130,7 +130,9 @@
 								<div class="col-sm-3">
 									<input type="text" class="quantity-input txt txt-qty" name="cart_quantity" value="' . (zen_get_buy_now_qty($_GET['products_id'])) . '" maxlength="6" size="4" />
 								</div>
-								<div class="cart_button col-sm-6">'.zen_image_submit(BUTTON_IMAGE_IN_CART, BUTTON_IN_CART_ALT).'</div>
+								<div class="cart_button col-sm-6">
+								<input id="custom-add-button" class="cssButton submit_button button  button_in_cart" onmouseover="this.id=\'custom-add-button-hover\', this.className=\'cssButtonHover  button_in_cart button_in_cartHover\'" onmouseout="this.id=\'custom-add-button\', this.className=\'cssButton submit_button button  button_in_cart\'" type="submit" value="ADD TO CART">
+								</div>
 							</div>' . zen_get_products_quantity_min_units_display((int)$_GET['products_id']) . zen_draw_hidden_field('products_id', (int)$_GET['products_id']);
 							
 						}

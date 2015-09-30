@@ -84,6 +84,14 @@ a:active, a:visited {
 	float:left;
 	margin:0 0;
 }
+
+#custom-add-button {
+	background: #fb4f47 !important;
+}
+#custom-add-button-hover {
+	background: #CC0000 !important;
+}
+
 .single-column {
 	right: 0;
 	width:100%;
