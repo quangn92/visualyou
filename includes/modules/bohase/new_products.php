@@ -106,9 +106,13 @@ if ($num_products_count > 0) {
 	
     	if (!isset($productsInCategory[$new_products->fields['products_id']])) $productsInCategory[$new_products->fields['products_id']] = zen_get_generated_category_path_rev($new_products->fields['master_categories_id']);
 	
-		if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $new_products->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
+		if (UN_MODULE_WISHLISTS_ENABLED) { 
+			$wishlist_link= zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $new_products->fields['products_id'] . '&action=wishlist_add_product');
+		} else { 
+			$wishlist_link='';
+		}
 	
-		$compare_link='<a class="lnk" href="javascript: compareNew('.$new_products->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
+		$compare_link='javascript: compareNew('.$new_products->fields['products_id'].', \'add\')';
 
 		/*$buy_now = zen_get_buy_now_button($new_products->fields['products_id'],'');
 		if($buy_now!=NULL){
@@ -124,27 +128,47 @@ if ($num_products_count > 0) {
 		/*Add to Cart Button*/
 			$buy_now = zen_get_buy_now_button($new_products->fields['products_id'],'');
 			if($buy_now!=NULL){
-				$buy_now ='<a class="btn btn-dark-blue btn-small-med btn-trans">'.$buy_now.'</a>';
+				// do nothing
+				//$buy_now ='<a class="btn btn-dark-blue btn-small-med btn-trans">'.$buy_now.'</a>';
 			}
 			elseif($attribute_product == $pid) {
-				$buy_now = zen_get_buy_now_button($new_products->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $new_products->fields['products_id']) . '">Select Options</a>');
+				$buy_now = zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $new_products->fields['products_id']);
 			}
 			else {
-				$buy_now = zen_get_buy_now_button($new_products->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $new_products->fields['products_id']) . '">Add to Cart</a>');
+				$buy_now = zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $new_products->fields['products_id']);
 			}
 	
 	$list_box_contents[$row][$col] = array('params' => 'class="item centerBoxContentsNew product-item back"' . ' ', 'text' => (($new_products->fields['products_image'] == '' and PRODUCTS_IMAGE_NO_IMAGE_STATUS == 0) ? '' : 
 	'<div class="product">
-		<div class="product-image">
-			<div class="image">' . zen_image(DIR_WS_IMAGES . $new_products->fields['products_image'], $new_products->fields['products_name'], IMAGE_PRODUCT_NEW_WIDTH, IMAGE_PRODUCT_NEW_HEIGHT) . '
-			</div>
-			<div class="cart">
-				<div class="action">
-					<div>'.$buy_now.'</div>
-					<div>'.$wishlist_link.'</div>
-					<div>'.$compare_link.'</div>
+		<div class="product-thumbnail">
+			<div class="product-thumbnail-image">
+				<a href="' . zen_href_link(zen_get_info_page($new_products->fields['products_id']), 'cPath=' . $productsInCategory[$new_products->fields['products_id']] . '&products_id=' . $new_products->fields['products_id']) . '">
+					' . zen_image(DIR_WS_IMAGES . $new_products->fields['products_image'], $new_products->fields['products_name'], IMAGE_PRODUCT_NEW_WIDTH, IMAGE_PRODUCT_NEW_HEIGHT) . '
+				</a>
+			
+				<div class="product-thumbnail-buttons">
+				
+					<div class="add_to_cart_link buttons">
+						<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . $buy_now . '">
+							<i class="fa fa-shopping-cart fa-lg"></i>
+						</a>
+					</div>
+					
+					<div class="wish_link buttons">
+						<a title="Add to Wishlist" class="wishlink" href="' . $wishlist_link. '">
+							<i class="fa fa-heart"></i>
+						</a>
+					</div>
+					
+					<div class="product-compare-link buttons">
+						<a title="Add to Compare" class="addtocompare" href="' . $compare_link. '">
+						<i class="fa fa-files-o fa-lg"></i>
+						</a>
+					</div>
+				
 				</div>
-			</div>'.$msg_product.'
+				'.$msg_product.'
+			</div>
 		</div>
 			
 		<div class="product-info">
