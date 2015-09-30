@@ -34,7 +34,7 @@ define('UN_TEXT_VIEW', 'View');
 define('UN_TEXT_ALL_CATEGORIES', 'All Categories');
 
 // more
-define('UN_TEXT_ADD_WISHLIST', 'Add to Wishlist');
+define('UN_TEXT_ADD_WISHLIST', 'Wishlist');
 define('UN_TEXT_REMOVE_WISHLIST', 'Remove from Wishlist');
 define('UN_BUTTON_IMAGE_SAVE', BUTTON_IMAGE_UPDATE);
 define('UN_BUTTON_SAVE_ALT', BUTTON_UPDATE_ALT);

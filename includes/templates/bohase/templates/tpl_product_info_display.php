@@ -136,9 +136,9 @@
 						}
                         $display_button = zen_get_buy_now_button($_GET['products_id'], $the_button);
                         
-                        if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" title="Add to Wishlist" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $_GET['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
+                        if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" title="Wishlist" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $_GET['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
                         
-                        $compare_link='<a class="lnk" title="Add to Compare" href="javascript: compareNew('.$_GET['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
+                        $compare_link='<a class="lnk" title="Compare" href="javascript: compareNew('.$_GET['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
                         
                       ?>
                       <?php if ($display_qty != '' or $display_button != '') { ?>

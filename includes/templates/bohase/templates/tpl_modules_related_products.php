@@ -131,9 +131,9 @@
 	
     	if (!isset($productsInCategory[$relatedResult->fields['products_id']])) $productsInCategory[$relatedResult->fields['products_id']] = zen_get_generated_category_path_rev($relatedResult->fields['master_categories_id']);
 	
-		if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $relatedResult->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Add to Wishlist</a>';}else{ $wishlist_link='';}
+		if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $relatedResult->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
 	
-		$compare_link='<a class="lnk" href="javascript: compareNew('.$relatedResult->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Add to Compare</a>';
+		$compare_link='<a class="lnk" href="javascript: compareNew('.$relatedResult->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
 
 		$buy_now = zen_get_buy_now_button($relatedResult->fields['products_id'],'');
 		if($buy_now!=NULL){

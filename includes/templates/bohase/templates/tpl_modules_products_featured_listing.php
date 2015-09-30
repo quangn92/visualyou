@@ -151,9 +151,9 @@
 			$attribute_product=$product_attribute_query_result->fields['products_id'];
 		
 			/*Wishlist Links*/
-			if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $featured_products->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Add to Wishlist</a>';}else{ $wishlist_link='';}
+			if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $featured_products->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
 	
-			$compare_link='<a class="lnk" href="javascript: compareNew('.$featured_products->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Add to Compare</a>';
+			$compare_link='<a class="lnk" href="javascript: compareNew('.$featured_products->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
 			
 			/*Add to Cart Button*/
 			$buy_now = zen_get_buy_now_button($featured_products->fields['products_id'],'');
