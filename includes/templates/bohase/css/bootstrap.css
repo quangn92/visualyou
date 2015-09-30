@@ -3123,6 +3123,9 @@ tbody.collapse.in {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
+.dropdown-cart {
+  margin: 6px 0px;
+}
 .dropdown {
   position: relative;
 }
