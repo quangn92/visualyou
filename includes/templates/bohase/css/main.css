@@ -3729,7 +3729,7 @@ header.header-style-3 .header-nav .cnt-search .input-group button i {
 .facet-box {
     background: rgba(255, 255, 255, 0.1);
     padding: 0px 25px 15px 0px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 @media (max-width: 1191px) and (min-width: 992px) {
   .facet-box {
