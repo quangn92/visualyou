@@ -90,6 +90,12 @@ a:active, a:visited {
 	width: 100%;
 }
 
+.product-thumbnail .product-thumbnail-image img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
 .product-compare-link {
 	
 }
