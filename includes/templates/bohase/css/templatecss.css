@@ -111,8 +111,8 @@ a:active, a:visited {
     bottom: 0px;
     left: -50px;
     transition: all 300ms ease-in-out 0s;
-    width: 50px;
-	height: 132px;
+    width: 48px;
+	height: 126px;
 	text-align: center;
 }
 
@@ -122,14 +122,14 @@ a:active, a:visited {
     position: relative;
     transition: all 300ms ease-in-out 0s;
     vertical-align: middle;
-	height: 44px;
+	height: 42px;
     border-bottom: 1px solid #AAAAAA;
 }
 
 .product-thumbnail-buttons .buttons  i.fa {
     font-size: 18px;
     margin-right: 0px;
-    padding: 15px;
+    padding: 14px;
 }
 
 .product-thumbnail-buttons .buttons a {
@@ -141,7 +141,7 @@ a:active, a:visited {
 }
 
 .product-thumbnail-buttons .buttons:hover {
-    background-color: red;
+    background-color: #37a5dc;
 }
 
 #custom-add-button {

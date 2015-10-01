@@ -219,7 +219,7 @@ if (!$flag_disable_footer) {
 
         if ($this_is_home_page) {
            
-           $instagram_banner = '<iframe src="/fashion/includes/templates/bohase/common/instagram_bottom_banner.html" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:100%; height: 300px; margin-top: 20px;" ></iframe>';
+           $instagram_banner = '<iframe src="/catalog/includes/templates/bohase/common/instagram_bottom_banner.html" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:100%; height: 300px; margin-top: 20px;" ></iframe>';
            echo $instagram_banner;
         }
     ?>
