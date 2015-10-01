@@ -191,7 +191,7 @@
 			<!-- Go to www.addthis.com/dashboard to customize your tools -->
 			<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ff0023c7cbb528" async="async"></script>
 			<div style="margin: 15px 0px 15px 0px; width: 50%; float: left;" > 
-			    <a href="https://www.visual-you.com/fashion/coupons-amp-specials-ezp-23.html">
+			    <a href="https://www.visual-you.com/catalog/coupons-amp-specials-ezp-23.html">
 			    	<img src="images/icons/free_gift_learn_more.gif" alt="free gift"> </img>
 			    </a>
 			</div>

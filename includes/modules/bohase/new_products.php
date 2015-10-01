@@ -129,13 +129,13 @@ if ($num_products_count > 0) {
 			$buy_now = zen_get_buy_now_button($new_products->fields['products_id'],'');
 			if($buy_now!=NULL){
 				// do nothing
-				//$buy_now ='<a class="btn btn-dark-blue btn-small-med btn-trans">'.$buy_now.'</a>';
+				$buy_now = zen_href_link(zen_get_info_page($new_products->fields['products_id']), 'cPath=' . $productsInCategory[$new_products->fields['products_id']] . '&products_id=' . $new_products->fields['products_id']);
 			}
 			elseif($attribute_product == $pid) {
-				$buy_now = zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $new_products->fields['products_id']);
+				$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $new_products->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 			}
 			else {
-				$buy_now = zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $new_products->fields['products_id']);
+				$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $new_products->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 			}
 	
 	$list_box_contents[$row][$col] = array('params' => 'class="item centerBoxContentsNew product-item back"' . ' ', 'text' => (($new_products->fields['products_image'] == '' and PRODUCTS_IMAGE_NO_IMAGE_STATUS == 0) ? '' : 
