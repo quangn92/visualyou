@@ -129,7 +129,7 @@ if ($num_products_count > 0) {
 			$buy_now = zen_get_buy_now_button($new_products->fields['products_id'],'');
 			if($buy_now!=NULL){
 				// do nothing
-				$buy_now = zen_href_link(zen_get_info_page($new_products->fields['products_id']), 'cPath=' . $productsInCategory[$new_products->fields['products_id']] . '&products_id=' . $new_products->fields['products_id']);
+				$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link(zen_get_info_page($new_products->fields['products_id']), 'cPath=' . $productsInCategory[$new_products->fields['products_id']] . '&products_id=' . $new_products->fields['products_id']) . '"><i class="fa fa-ban fa-lg"></i></a>';
 			}
 			elseif($attribute_product == $pid) {
 				$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $new_products->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
@@ -149,9 +149,7 @@ if ($num_products_count > 0) {
 				<div class="product-thumbnail-buttons">
 				
 					<div class="add_to_cart_link buttons">
-						<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . $buy_now . '">
-							<i class="fa fa-shopping-cart fa-lg"></i>
-						</a>
+						' . $buy_now . '
 					</div>
 					
 					<div class="wish_link buttons">
