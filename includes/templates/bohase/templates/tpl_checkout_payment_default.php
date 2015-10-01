@@ -125,7 +125,9 @@
               echo TEXT_ACCEPTED_CREDIT_CARDS . zen_get_cc_enabled();
             }
             if (SHOW_ACCEPTED_CREDIT_CARDS == '2') {
-              echo TEXT_ACCEPTED_CREDIT_CARDS . zen_get_cc_enabled('IMAGE_');
+                /*
+                    echo TEXT_ACCEPTED_CREDIT_CARDS . zen_get_cc_enabled('IMAGE_');
+                 */
             }
         ?>
         <br class="clearBoth" />
