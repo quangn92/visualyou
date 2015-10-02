@@ -15,7 +15,7 @@
 	</header>
     <?php if ($messageStack->size('password_forgotten') > 0) echo $messageStack->output('password_forgotten'); ?>
 	<div class="content">
-		<?php echo zen_draw_form('password_forgotten', zen_href_link(FILENAME_LOGIN, 'action=process', 'SSL')); ?>
+		<?php echo zen_draw_form('password_forgotten', zen_href_link(FILENAME_PASSWORD_FORGOTTEN, 'action=process', 'SSL')); ?>
         <div id="passwordForgottenMainContent"><?php echo TEXT_MAIN; ?></div>
 		<br class="clearBoth" />
 		<div class="alert-text forward"><?php echo FORM_REQUIRED_INFORMATION; ?></div>
