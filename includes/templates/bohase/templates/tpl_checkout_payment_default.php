@@ -184,12 +184,14 @@
         <div class="ccinfo">
 			<?php
                   for ($j=0, $n2=sizeof($selection[$i]['fields']); $j<$n2; $j++) {
-            ?>
+?>
+        <div>
             <label <?php echo (isset($selection[$i]['fields'][$j]['tag']) ? 'for="'.$selection[$i]['fields'][$j]['tag'] . '" ' : ''); ?>class="inputLabelPayment"><?php echo 
-				$selection[$i]['fields'][$j]['title']; ?></label><?php echo $selection[$i]['fields'][$j]['field']; ?>
+                $selection[$i]['fields'][$j]['title']; ?></label><?php echo $selection[$i]['fields'][$j]['field']; ?>
+        </div>
 			<?php
                   }
-            ?>
+?>
         </div>
 		<?php
             }
