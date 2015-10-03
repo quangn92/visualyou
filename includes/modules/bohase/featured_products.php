@@ -145,24 +145,28 @@ if ($num_products_count > 0) {
 	
     if (!isset($productsInCategory[$featured_products->fields['products_id']])) $productsInCategory[$featured_products->fields['products_id']] = zen_get_generated_category_path_rev($featured_products->fields['master_categories_id']);
 	
-			/*Wishlist/Compare Links*/
-			if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $featured_products->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
+	/*Wishlist/Compare Links*/
+	if (UN_MODULE_WISHLISTS_ENABLED) {
+		$wishlist_link= zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $featured_products->fields['products_id'] . '&action=wishlist_add_product');
+	} else {
+		$wishlist_link='';
+	}
 	
-	$compare_link='<a class="lnk" href="javascript: compareNew('.$featured_products->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
-		  	/*Wishlist/Compare Links Ends*/
+	$compare_link='javascript: compareNew('.$featured_products->fields['products_id'].', \'add\')';
+	/*Wishlist/Compare Links Ends*/
 		
 			
 	$buy_now = zen_get_buy_now_button($featured_products->fields['products_id'],'');
 	if($buy_now!=NULL){
-		$buy_now ='<a class="btn btn-dark-blue btn-small-med btn-trans sold_out">'.$buy_now.'</a>';
+		$buy_now = '<a title="Sold Out" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link(zen_get_info_page($featured_products->fields['products_id']), 'cPath=' . $productsInCategory[$featured_products->fields['products_id']] . '&products_id=' . $featured_products->fields['products_id']) . '"><i class="fa fa-ban fa-lg"></i></a>';
 	}
 	elseif($attribute_product == $fid) {
-		$buy_now = zen_get_buy_now_button($featured_products->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $featured_products->fields['products_id']) . '">Select Options</a>');
+		$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $featured_products->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 	}
 	else {
-		$buy_now = zen_get_buy_now_button($featured_products->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $featured_products->fields['products_id']) . '">Add to Cart</a>');
+		$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $featured_products->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 	}
-	
+		
 	if(SHOW_PRODUCT_INFO_COLUMNS_FEATURED_PRODUCTS=='4') {
 		$grid_class = 'col-lg-3';
 	}
@@ -172,16 +176,33 @@ if ($num_products_count > 0) {
     $list_box_contents[$row][$col] = array('params' =>'class="item centerBoxContentsFeatured col-xs-12 col-sm-6 col-md-3 '.$grid_class.' back"' . ' ',
     'text' => (($featured_products->fields['products_image'] == '' and PRODUCTS_IMAGE_NO_IMAGE_STATUS == 0) ? '' : '
 	<div class="product">
-		<div class="product-image">
-			<div class="image">' . zen_image(DIR_WS_IMAGES . $featured_products->fields['products_image'], $featured_products->fields['products_name'], IMAGE_FEATURED_PRODUCTS_LISTING_WIDTH, IMAGE_FEATURED_PRODUCTS_LISTING_HEIGHT) . '
-			</div>
-			<div class="cart">
-				<div class="action">
-					<div>'.$buy_now.'</div>
-					<div>'.$wishlist_link.'</div>
-					<div>'.$compare_link.'</div>
+		<div class="product-thumbnail">
+			<div class="product-thumbnail-image">
+				<a href="' . zen_href_link(zen_get_info_page($featured_products->fields['products_id']), 'cPath=' . $productsInCategory[$featured_products->fields['products_id']] . '&products_id=' . $featured_products->fields['products_id']) . '">
+					' . zen_image(DIR_WS_IMAGES . $featured_products->fields['products_image'], $featured_products->fields['products_name'], IMAGE_FEATURED_PRODUCTS_LISTING_WIDTH, IMAGE_FEATURED_PRODUCTS_LISTING_HEIGHT) . '
+				</a>
+			
+				<div class="product-thumbnail-buttons">
+				
+					<div class="add_to_cart_link buttons">
+						' . $buy_now . '
+					</div>
+					
+					<div class="wish_link buttons">
+						<a title="Add to Wishlist" class="wishlink" href="' . $wishlist_link. '">
+							<i class="fa fa-heart"></i>
+						</a>
+					</div>
+					
+					<div class="product-compare-link buttons">
+						<a title="Add to Compare" class="addtocompare" href="' . $compare_link. '">
+						<i class="fa fa-files-o fa-lg"></i>
+						</a>
+					</div>
+				
 				</div>
-			</div>'.$msg_product.'
+				'.$msg_product.'
+			</div>
 		</div>
 			
 		<div class="product-info">

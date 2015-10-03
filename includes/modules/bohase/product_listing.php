@@ -327,50 +327,96 @@ if ($listing_split->number_of_rows > 0) {
 		$attribute_product=$product_attribute_query_result->fields['products_id'];
 
 	$display_products_model = TEXT_PRODUCTS_MODEL . $listing->fields['products_model'] . str_repeat('', substr(PRODUCT_ALL_LIST_MODEL, 3, 1));
-		  
-			/*Wishlist Links*/
-			if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $listing->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
+		
+		/* Begin gridview */
+		/*Wishlist Links*/
+		if (UN_MODULE_WISHLISTS_ENABLED) {
+			$wishlist_link= zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $listing->fields['products_id'] . '&action=wishlist_add_product');
+		} else {
+			$wishlist_link='';
+		}
 	
-		$compare_link='<a class="lnk" href="javascript: compareNew('.$listing->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
+		$compare_link='javascript: compareNew('.$listing->fields['products_id'].', \'add\')';
+		$compare_link='<a title="Add to Compare" class="addtocompare" href="' . $compare_link. '">
+										<i class="fa fa-files-o fa-lg"></i>
+										</a>';
 		
 			
-		  	/*Add to Cart Button*/
-			$buy_now = zen_get_buy_now_button($listing->fields['products_id'],'');
-			if($buy_now!=NULL){
-				$buy_now ='<a class="btn btn-dark-blue btn-small-med btn-trans">'.$buy_now.'</a>';
-			}
-			elseif($attribute_product == $pid) {
-				$buy_now = zen_get_buy_now_button($listing->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $listing->fields['products_id']) . '">Select Options</a>');
-			}
-			else {
-				$buy_now = zen_get_buy_now_button($listing->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $listing->fields['products_id']) . '">Add to Cart</a>');
-			}
+		/*Add to Cart Button*/
+		$buy_now = zen_get_buy_now_button($listing->fields['products_id'],'');
+		if($buy_now!=NULL){
+			$buy_now = '<a title="Sold Out" class="detailbutton-wrapper add-to-cart" href="' . $product_link_only . '"><i class="fa fa-ban fa-lg"></i></a>';
+		}
+		elseif($attribute_product == $pid) {
+			$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $listing->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
+		}
+		else {
+			$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $listing->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
+		}
+		/* End gridview */
+		
+		/* Begin listview */
+		/*Wishlist Links*/
+		if (UN_MODULE_WISHLISTS_ENABLED) { $listview_wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $listing->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Add to Wishlist</a>';}else{ $listview_wishlist_link='';}
+
+		$listview_compare_link='<a class="lnk" href="javascript: compareNew('.$listing->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Add to Compare</a>';
+	
+		
+		/*Add to Cart Button*/
+		$listview_buy_now = zen_get_buy_now_button($listing->fields['products_id'],'');
+		if($listview_buy_now!=NULL){
+			$listview_buy_now ='<a class="btn btn-dark-blue btn-small-med btn-trans">'.$listview_buy_now.'</a>';
+		}
+		elseif($attribute_product == $pid) {
+			$listview_buy_now = zen_get_buy_now_button($listing->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $listing->fields['products_id']) . '">Select Options</a>');
+		}
+		else {
+			$listview_buy_now = zen_get_buy_now_button($listing->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $listing->fields['products_id']) . '">Add to Cart</a>');
+		}
+		/* End listview */
 			
-			/*$listview_addtocartbtn = zen_get_buy_now_button($listing->fields['products_id']);
-			
-			if($listview_addtocartbtn !=NULL){
-				$listview_addtocartbtn ='<a class="sold_out le-btn"><i class="fa fa-ban fa-lg"></i>'.$listview_addtocartbtn.'</a>';
-			}
-			else {
-				$listview_addtocartbtn = zen_get_buy_now_button($listing->fields['products_id'],'<a class="detailbutton-wrapper add-to-cart le-btn" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $listing->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i><span>to Cart</span></a>');
-			}*/
-		 	/*Add to Cart Button Ends*/
+		/*$listview_addtocartbtn = zen_get_buy_now_button($listing->fields['products_id']);
+		
+		if($listview_addtocartbtn !=NULL){
+			$listview_addtocartbtn ='<a class="sold_out le-btn"><i class="fa fa-ban fa-lg"></i>'.$listview_addtocartbtn.'</a>';
+		}
+		else {
+			$listview_addtocartbtn = zen_get_buy_now_button($listing->fields['products_id'],'<a class="detailbutton-wrapper add-to-cart le-btn" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $listing->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i><span>to Cart</span></a>');
+		}*/
+		/*Add to Cart Button Ends*/
+		
 		 
       $lc_text = '<div class="item product-item" data-filter="listing" data-name="'.$product_name_only.'" data-discount="'.$get_discount_prod.'" data-price="101">';
 	  
 	  		$lc_text.='<div class="product grid-view">';
-				$lc_text.='<div class="product-image">
-								<div class="image">
-				 					'.$product_img. 
-								'</div>
-								<div class="cart">
-									<div class="action">
-										<div>'.$buy_now.'</div>
-										<div>'.$wishlist_link.'</div>
-										<div>'.$compare_link.'</div>
+				$lc_text.='<div class="product-thumbnail">
+							<div class="product-thumbnail-image">
+								<a href="' . $product_link_only . '">
+									' . $product_img . '
+								</a>
+							
+								<div class="product-thumbnail-buttons">
+								
+									<div class="add_to_cart_link buttons">
+										' . $buy_now . '
 									</div>
-								</div>'.$ribbon.
-							'</div>';
+									
+									<div class="wish_link buttons">
+										<a title="Add to Wishlist" class="wishlink" href="' . $wishlist_link. '">
+											<i class="fa fa-heart"></i>
+										</a>
+									</div>
+									
+									<div class="product-compare-link buttons">
+										<a title="Add to Compare" class="addtocompare" href="' . $compare_link. '">
+										<i class="fa fa-files-o fa-lg"></i>
+										</a>
+									</div>
+								
+								</div>
+								'.$ribbon.'
+							</div>
+						</div>';
 				$lc_text.='<div class="product-info">
 								<h3 class="name">	
 									<a href="'.$product_link_only.'">'.$product_name_only.'</a>
@@ -405,10 +451,10 @@ if ($listing_split->number_of_rows > 0) {
 													</div>
 													<div class="col col-sm-8">
 														<div class="cart-action">
-															'.$buy_now.'
+															'.$listview_buy_now.'
 														</div>
 														<div class="sec-action">
-															'.$wishlist_link . $compare_link .'
+															'.$listview_wishlist_link . $listview_compare_link .'
 														</div>
 													</div>
 												</div>

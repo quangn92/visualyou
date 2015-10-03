@@ -147,23 +147,45 @@
 			$product_attribute_query = "select distinct products_id from " . TABLE_PRODUCTS_ATTRIBUTES." where products_id='$pid'";
 			$product_attribute_query_result = $db->Execute($product_attribute_query);
 			$attribute_product=$product_attribute_query_result->fields['products_id'];
-		
+			/* Begin gridview */
 			/*Wishlist Links*/
-			if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $products_all->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
+			if (UN_MODULE_WISHLISTS_ENABLED) { 
+				$wishlist_link= zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $products_all->fields['products_id'] . '&action=wishlist_add_product');
+			} else { $wishlist_link=''; }
 	
-			$compare_link='<a class="lnk" href="javascript: compareNew('.$products_all->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
+			$compare_link='javascript: compareNew('.$products_all->fields['products_id'].', \'add\')';
 			
 			/*Add to Cart Button*/
 			$buy_now = zen_get_buy_now_button($products_all->fields['products_id'],'');
 			if($buy_now!=NULL){
-				$buy_now ='<a class="btn btn-dark-blue btn-small-med btn-trans">'.$buy_now.'</a>';
+				$buy_now = '<a title="Sold Out" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link(zen_get_info_page($products_all->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($products_all->fields['master_categories_id']) . '&products_id=' . $products_all->fields['products_id']) . '"><i class="fa fa-ban fa-lg"></i></a>';
 			}
 			elseif($attribute_product == $pid) {
-				$buy_now = zen_get_buy_now_button($products_all->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_all->fields['products_id']) . '">Select Options</a>');
+				$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_all->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 			}
 			else {
-				$buy_now = zen_get_buy_now_button($products_all->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_all->fields['products_id']) . '">Add to Cart</a>');
+				$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_all->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 			}
+			/* End gridview */
+			
+			/* Begin listview */
+			/*Wishlist Links*/
+			if (UN_MODULE_WISHLISTS_ENABLED) { $listview_wishlist_link= '<a class="lnk" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $products_all->fields['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $listview_wishlist_link='';}
+	
+			$listview_compare_link='<a class="lnk" href="javascript: compareNew('.$products_all->fields['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
+			
+			/*Add to Cart Button*/
+			$listview_buy_now = zen_get_buy_now_button($products_all->fields['products_id'],'');
+			if($buy_now!=NULL){
+				$listview_buy_now ='<a class="btn btn-dark-blue btn-small-med btn-trans">'.$listview_buy_now.'</a>';
+			}
+			elseif($attribute_product == $pid) {
+				$listview_buy_now = zen_get_buy_now_button($products_all->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_all->fields['products_id']) . '">Select Options</a>');
+			}
+			else {
+				$listview_buy_now = zen_get_buy_now_button($products_all->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_all->fields['products_id']) . '">Add to Cart</a>');
+			}
+			/* End listview */
 			
  ?>
  <?php 
@@ -173,18 +195,35 @@
     	<div data-filter="all products" data-name="<?php echo $products_name; ?>" data-discount="0" data-price="110" class="item product-item">
         	<!-- Product Grid View -->
           	<div class="product grid-view">
-            	<div class="product-image">
-					<div class="image">
-                   		<?php echo $display_products_image; ?>
-                  	</div>
-                    <div class="cart">
-                    	<div class="action">
-                        	<div><?php echo $buy_now; ?></div>
-                            <div><?php echo $wishlist_link; ?></div>
-                            <div><?php echo $compare_link; ?></div>
-                       	</div>
-                    </div><?php echo $ribbon; ?>
+				<div class="product-thumbnail">
+					<div class="product-thumbnail-image">
+						<a href="<?php echo zen_href_link(zen_get_info_page($products_all->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($products_all->fields['master_categories_id']) . '&products_id=' . $products_all->fields['products_id']);?>">
+						<?php echo $display_products_image; ?>
+						</a>
+					
+						<div class="product-thumbnail-buttons">
+						
+							<div class="add_to_cart_link buttons">
+								<?php echo $buy_now; ?>
+							</div>
+							
+							<div class="wish_link buttons">
+								<a title="Add to Wishlist" class="wishlink" href="<?php echo $wishlist_link; ?>">
+									<i class="fa fa-heart"></i>
+								</a>
+							</div>
+							
+							<div class="product-compare-link buttons">
+								<a title="Add to Compare" class="addtocompare" href="<?php echo $compare_link; ?>">
+								<i class="fa fa-files-o fa-lg"></i>
+								</a>
+							</div>
+						
+						</div>
+						<?php echo $ribbon; ?>
+					</div>
 				</div>
+
                 <div class="product-info">
                    	<h3 class="name">
            				<?php echo $display_products_name; ?>
@@ -222,10 +261,10 @@
                                     </div>
                                     <div class="col col-sm-8">
                                         <div class="cart-action">
-                                            <?php echo $buy_now; ?>
+                                            <?php echo $listview_buy_now; ?>
                                         </div>
                                         <div class="sec-action">
-                                            <?php echo $wishlist_link . $compare_link; ?>
+                                            <?php echo $listview_wishlist_link . $listview_compare_link; ?>
                                         </div>
                                     </div>
                                 </div>
