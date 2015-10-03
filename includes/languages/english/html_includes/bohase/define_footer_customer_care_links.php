@@ -14,12 +14,21 @@
 
 			</li>
 
+				<li>
+
+					<a href="https://www.visual-you.com/catalog/order-payment-ezp-45.html">
+
+						Order & Payment
+
+					</a>
+
+				</li>
 
 				<li>
 
 					<a href="https://www.visual-you.com/catalog/return-amp-exchange-policy-ezp-27.html">
 
-						Return & Exchange Policy
+						Return & Exchange
 
 					</a>
 
