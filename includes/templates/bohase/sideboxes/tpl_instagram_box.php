@@ -10,7 +10,7 @@
  */
   $content = '';
 
-  $content .= '<iframe src="https://www.intagme.com/in/?u=bG9raXNhZmFzaGlvbnxpbnwxMDB8MnwzfHx5ZXN8NXx1bmRlZmluZWR8eWVz" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:230px; height: 345px" ></iframe>';
+  $content .= '<iframe src="https://www.intagme.com/in/?u=bG9raXNhZmFzaGlvbnxpbnwxMDB8MnwzfHx5ZXN8NXx1bmRlZmluZWR8eWVz&output=embed" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:230px; height: 345px" ></iframe>';
 //  $content .= file_get_contents('https://www.visual-you.com/develop/includes/templates/bohase/common/instagram_box.html');
   $content .= '';
 ?>

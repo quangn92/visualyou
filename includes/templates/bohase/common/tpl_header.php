@@ -35,7 +35,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
         	<div class="row">
             	<div class="col-lg-12">
                     <div class="header-top-inner">
-                        <div class="col-lg-6 cnt-account">
+                        <div class="custom-top-column cnt-account">
                             <ul class="list-unstyled list-inline">
                                 <li>
                                     <a class='my_account' href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>">
@@ -65,7 +65,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-lg-6 cnt-cart">
+                        <div class="custom-top-column cnt-cart">
                             <ul class="list-unstyled list-inline">
                                 <?php 
                                     if (HEADER_LANGUAGES_DISPLAY == 'True') {
@@ -115,7 +115,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
     	<div class="container">
         	<div class="row">
                 <div class="header-top-inner">
-                    <div class="col-lg-6">
+                    <div class="custom-top-column">
                         <div class="cnt-account">
                             <ul class="list-unstyled list-inline">
                                 <li>
@@ -147,7 +147,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="custom-top-column">
                         <div class="cnt-cart">
                             <ul class="list-unstyled list-inline">
                             	<?php 
@@ -295,15 +295,15 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
 			<div class="container-class <?php echo $container_class; ?>">
 				<div class="navbar-header">
                    	<div class="logo">
-						<div style="position: relative; width: 35%; height: 134px; float:left;"></div>
-						<div style="position: relative; width: 30%; height: 100%; float: left;">
+						<div style="position: relative; width: 25%; height: 134px; float:left;"></div>
+						<div style="position: relative; width: 50%; height: 100%; float: left;">
 							<a class="custom-navbar-brand" href="#">
 								<img alt="<?php if($logo_image!=NULL){ echo "logo"; } ?>" src="<?php echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'images').'/logo/'.$logo_image;?>" />
 							</a>
 						</div>
-						<div style="position: relative; width: 35%; height: 134px; float:left;">
+						<div style="position: relative; width: 25%; height: 134px; float:left;">
 						<div style="position: absolute; bottom: 0; right: 0;">
-							<div class="fb-like" style=""data-href="<?php echo $facebook_link; ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+							<div class="fb-like" style="margin-right: 5px;" data-href="<?php echo $facebook_link; ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 
 								<a target="_blank" href="<?php echo $instagram_link; ?>">
 								<img style="margin-bottom: 15px;" src="https://www.visual-you.com/images/new_social_mini_ig.gif" width="25" height="25"></a>

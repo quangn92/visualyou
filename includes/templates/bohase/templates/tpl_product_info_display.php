@@ -139,6 +139,8 @@
                         $display_button = zen_get_buy_now_button($_GET['products_id'], $the_button);
                         
                         if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" title="Wishlist" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $_GET['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
+						
+						$freegift_link = '<a class="lnk" title="Compare" href="https://www.visual-you.com/catalog/coupons-amp-specials-ezp-23.html"><i style="font-size: 15px;" class="fa fa-gift"></i>Free Gift</a>';
                         
                         $compare_link='<a class="lnk" title="Compare" href="javascript: compareNew('.$_GET['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
                         
@@ -158,6 +160,7 @@
                                       <div class="btn-options">
                                           <?php echo $wishlist_link; ?>
                                           <?php echo $compare_link; ?>
+										  <?php echo $freegift_link; ?>
                                       </div>
                                   </div>
                               </div>
@@ -187,23 +190,18 @@
                     <!--eof Attributes Module -->
                     
                     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-			<div class="addthis_sharing_toolbox" style="margin: 15px 0px 15px 0px; width: 50%; float: left;" ></div>
+			<div class="addthis_sharing_toolbox" style="margin: 15px 0px 15px 0px; width: 100%; float: left;" ></div>
 			<!-- Go to www.addthis.com/dashboard to customize your tools -->
 			<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ff0023c7cbb528" async="async"></script>
-			<div style="margin: 15px 0px 15px 0px; width: 50%; float: left;" > 
-			    <a href="https://www.visual-you.com/catalog/coupons-amp-specials-ezp-23.html">
-			    	<img src="images/icons/free_gift_learn_more.gif" alt="free gift"> </img>
-			    </a>
-			</div>
 		    <!-- Product model -->
 		    <div>
 		    <?php if ( (($flag_show_product_info_model == 1 and $products_model != '') or ($flag_show_product_info_weight == 1 and $products_weight !=0) or ($flag_show_product_info_quantity == 1) or ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name))) ) { ?>
                             <ul id="productDetailsList" class="floatingBox">
-                                <?php echo (($flag_show_product_info_model == 1 and $products_model !='') ? '<li>' . TEXT_PRODUCT_MODEL . $products_model . '</li>' : '') . "\n"; ?>
-                                <?php echo (($flag_show_product_info_weight == 1 and $products_weight !=0) ? '<li>' . TEXT_PRODUCT_WEIGHT .  $products_weight . TEXT_PRODUCT_WEIGHT_UNIT . 
+                                <?php echo (($flag_show_product_info_model == 1 and $products_model !='') ? '<li class="custom-product-font">' . TEXT_PRODUCT_MODEL . $products_model . '</li>' : '') . "\n"; ?>
+                                <?php echo (($flag_show_product_info_weight == 1 and $products_weight !=0) ? '<li class="custom-product-font">' . TEXT_PRODUCT_WEIGHT .  $products_weight . TEXT_PRODUCT_WEIGHT_UNIT . 
                                     '</li>'  : '') . "\n"; ?>
-                                <?php echo (($flag_show_product_info_quantity == 1) ? '<li><span class="units">' . TEXT_PRODUCT_QUANTITY . '</span></li>'  : '') . "\n"; ?>
-                                <?php echo (($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name)) ? '<li><span class="units">' . TEXT_PRODUCT_MANUFACTURER . 
+                                <?php echo (($flag_show_product_info_quantity == 1) ? '<li class="custom-product-font"><span class="units">' . TEXT_PRODUCT_QUANTITY . '</span></li>'  : '') . "\n"; ?>
+                                <?php echo (($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name)) ? '<li class="custom-product-font"><span class="units">' . TEXT_PRODUCT_MANUFACTURER . 
                                     $manufacturers_name . '</span></li>' : '') . "\n"; ?>
                             </ul>
                         <?php } ?>
@@ -284,7 +282,7 @@
                 
                 <div id="delivery" class="tab-pane">
                     <div class="product-tab">
-			<b>Delivery show here</b>
+						<iframe src="https://www.visual-you.com/catalog/includes/templates/bohase/common/delivery.html" allowtransparency="true" scrolling="no" style="border:none; overflow:hidden; width:920px; height: 250px;" frameborder="0"></iframe>
                     </div>
                 </div>
                 

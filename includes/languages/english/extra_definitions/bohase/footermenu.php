@@ -18,7 +18,7 @@
 // +----------------------------------------------------------------------+
 // $Id: footermenu.php
 
-define('FOOTER_TITLE_INFORMATIONS','Informations');
+define('FOOTER_TITLE_INFORMATIONS','Information');
 define('FOOTER_TITLE_MY_ACCOUNT','My Account');
 define('FOOTER_TITLE_CUSTOMER_CARE','Customer Care');
 define('FOOTER_TITLE_GET_IN_TOUCH','Get In Touch');

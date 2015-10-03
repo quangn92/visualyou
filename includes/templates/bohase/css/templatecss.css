@@ -403,7 +403,7 @@ input[type="checkbox"]
 }
 .single_price, .productSalePrice, .productSpecialPrice, .productPriceDiscount, #productPrices {
     color: #7b7b7b;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: bold;
     margin-right: 8px;
 	display:inline-block;
@@ -3426,7 +3426,7 @@ display:none;
     left: 25%;
 }
 .three-columns {
-    right: 50% !important;
+    right: 75% !important;
 }
 
 button.close {
@@ -4967,7 +4967,7 @@ a, button, a:hover, button:hover, a:focus, button:focus, a.active, button.active
 }
 .index-ratings {
     display: inline-block;
-    font-size: 13px;
+    font-size: 12px;
 }
 .product-info-ratings .index-ratings {
 	margin: 0;
