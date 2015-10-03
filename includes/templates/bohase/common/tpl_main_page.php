@@ -269,10 +269,4 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="ssl"></div>
-<script language="JavaScript" type="text/javascript">
-TrustLogo("https://www.visual-you.com/images/comodo_secure_113x59_transp.png", "CL1", "none");
-</script>
-<a href="http://ssl.comodo.com" id="comodoTL">SSL Certificates</a>
-
 </body>

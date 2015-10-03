@@ -165,11 +165,4 @@ require($template->get_template_dir('tpl_template_custom_css.php',DIR_WS_TEMPLAT
 
 
 ?>
-<script language="javascript" type="text/javascript">
-//<![CDATA[
-var tl_loc0=(window.location.protocol == "https:")? "https://secure.comodo.net/trustlogo/javascript/trustlogo.js" :
-"https://www.trustlogo.com/trustlogo/javascript/trustlogo.js";
-document.writeln('<scr' + 'ipt language="JavaScript" src="'+tl_loc0+'" type="text\/javascript">' + '<\/scr' + 'ipt>');
-//]]>
-</script>
 <?php // NOTE: Blank line following is intended: ?>
