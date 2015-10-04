@@ -151,7 +151,8 @@
 		<?php
             if (sizeof($selection) > 1) {
                 if (empty($selection[$i]['noradio'])) {
-         ?>
+?>
+        <div>
 		<?php echo zen_draw_radio_field('payment', $selection[$i]['id'], ($selection[$i]['id'] == $_SESSION['payment'] ? true : false), 'id="pmt-'.$selection[$i]['id'].'"'); ?>
         <?php   } ?>
         <?php
@@ -160,12 +161,12 @@
 		<?php echo zen_draw_hidden_field('payment', $selection[$i]['id'], 'id="pmt-'.$selection[$i]['id'].'"'); ?>
 		<?php
 			}
-		?>
-    		 <label for="pmt-<?php echo $selection[$i]['id']; ?>" class="radioButtonLabel"><?php echo $selection[$i]['module']; ?></label> </strong>
-        
+        ?>
+        <label for="pmt-<?php echo $selection[$i]['id']; ?>" class="radioButtonLabel"><?php echo $selection[$i]['module']; ?></label> </strong>
+        </div> 
         <?php
             if (defined('MODULE_ORDER_TOTAL_COD_STATUS') && MODULE_ORDER_TOTAL_COD_STATUS == 'true' and $selection[$i]['id'] == 'cod') {
-        ?>
+?>
         <div class="alert-text"><?php echo TEXT_INFO_COD_FEES; ?></div>
 			<?php
                 } else {
@@ -180,7 +181,7 @@
     	<div><?php echo $selection[$i]['error']; ?></div>
 			<?php
                 } elseif (isset($selection[$i]['fields']) && is_array($selection[$i]['fields'])) {
-            ?>
+        ?>
         <div class="ccinfo">
 			<?php
                   for ($j=0, $n2=sizeof($selection[$i]['fields']); $j<$n2; $j++) {
