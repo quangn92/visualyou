@@ -337,10 +337,6 @@ if ($listing_split->number_of_rows > 0) {
 		}
 	
 		$compare_link='javascript: compareNew('.$listing->fields['products_id'].', \'add\')';
-		$compare_link='<a title="Add to Compare" class="addtocompare" href="' . $compare_link. '">
-										<i class="fa fa-files-o fa-lg"></i>
-										</a>';
-		
 			
 		/*Add to Cart Button*/
 		$buy_now = zen_get_buy_now_button($listing->fields['products_id'],'');
