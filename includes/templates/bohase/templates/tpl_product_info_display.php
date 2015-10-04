@@ -140,7 +140,7 @@
                         
                         if (UN_MODULE_WISHLISTS_ENABLED) { $wishlist_link= '<a class="lnk" title="Wishlist" href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $_GET['products_id'] . '&action=wishlist_add_product') . '"><i class="fa fa-heart"></i>Wishlist</a>';}else{ $wishlist_link='';}
 						
-						$freegift_link = '<a class="lnk" title="Compare" href="https://www.visual-you.com/catalog/coupons-amp-specials-ezp-23.html"><i style="font-size: 15px;" class="fa fa-gift"></i>Free Gift</a>';
+						$freegift_link = '<a class="lnk" title="Free Gift" href="https://www.visual-you.com/catalog/coupons-amp-specials-ezp-23.html"><i style="font-size: 15px;" class="fa fa-gift"></i>Free Gift</a>';
                         
                         $compare_link='<a class="lnk" title="Compare" href="javascript: compareNew('.$_GET['products_id'].', \'add\')"><i class="fa fa-exchange"></i>Compare</a>';
                         
