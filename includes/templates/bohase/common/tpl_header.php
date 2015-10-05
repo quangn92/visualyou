@@ -35,7 +35,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
         	<div class="row">
             	<div class="col-lg-12">
                     <div class="header-top-inner">
-                        <div class="custom-top-column cnt-account">
+                        <div class="custom-left-top-column cnt-account">
                             <ul class="list-unstyled list-inline">
                                 <li>
                                     <a class='my_account' href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>">
@@ -65,8 +65,17 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                                 </li>
                             </ul>
                         </div>
-                        <div class="custom-top-column cnt-cart">
+						
+                        <div class="custom-right-top-column cnt-cart">
                             <ul class="list-unstyled list-inline">
+								<li class="dropdown dropdown-cart">
+									<div id="google_translate_element"></div>
+									<script type="text/javascript">
+										function googleTranslateElementInit() {
+										  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'de,en,es,fr,ja,ko', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
+										}
+									</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+								</li>
                                 <?php 
                                     if (HEADER_LANGUAGES_DISPLAY == 'True') {
                                 ?>
@@ -115,7 +124,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
     	<div class="container">
         	<div class="row">
                 <div class="header-top-inner">
-                    <div class="custom-top-column">
+                    <div class="custom-left-top-column">
                         <div class="cnt-account">
                             <ul class="list-unstyled list-inline">
                                 <li>
@@ -147,7 +156,8 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                             </ul>
                         </div>
                     </div>
-                    <div class="custom-top-column">
+					
+                    <div class="custom-large-right-top-column">
                         <div class="cnt-cart">
                             <ul class="list-unstyled list-inline">
                             	<?php 

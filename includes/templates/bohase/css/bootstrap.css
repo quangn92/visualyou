@@ -1935,12 +1935,42 @@ pre code {
   .custom-main-content {
     width: 75%; 
   }
-  .custom-top-column {
+  .custom-left-top-column {
 	width: 50%;
 	min-height: 1px;
 	float: left;
 	padding-right: 15px;
     padding-left: 15px;
+  }  
+  .custom-center-top-column {
+	width: 0%;
+	min-height: 1px;
+	float: left;
+	margin-top: 9px;
+	padding-left: 45px;
+  }
+  .custom-right-top-column {
+	width: 50%;
+	min-height: 1px;
+	float: left;
+	padding-right: 15px;
+    padding-left: 15px;
+  }
+  .custom-large-right-top-column {
+	width: 23%;
+	min-height: 1px;
+	float: left;
+	padding-right: 15px;
+    padding-left: 15px;
+  }
+  .goog-te-menu-value span:not(:first-child), .goog-te-menu-value img {
+    display: none !important;
+   } 
+  .goog-te-gadget-simple {
+    border: medium none !important;
+    padding: 0px !important;
+    background: transparent none repeat scroll 0% 0% !important;
+    font-size: 11px !important;
   }
   .col-lg-5 {
     width: 41.66666667%;
