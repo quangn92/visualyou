@@ -99,6 +99,7 @@
                                   //echo '      <div class="moduleRow">' . "\n";
                                 }
                         ?>
+                    <div>
                     <?php echo zen_draw_radio_field('shipping', $quotes[$i]['id'] . '_' . $quotes[$i]['methods'][$j]['id'], $checked, 'id="ship-'.$quotes[$i]['id'] . '-' . str_replace(' ', '-', $quotes[$i]['methods'][$j]['id']) .'"'); ?>
                     <label for="ship-<?php echo $quotes[$i]['id'] . '-' . str_replace(' ', '-', $quotes[$i]['methods'][$j]['id']); ?>" class="checkboxLabel" >
                         <?php echo $quotes[$i]['methods'][$j]['title']; ?>
@@ -109,6 +110,7 @@
                     <span class="important forward">
                         <?php echo $currencies->format(zen_add_tax($quotes[$i]['methods'][$j]['cost'], (isset($quotes[$i]['tax']) ? $quotes[$i]['tax'] : 0))); ?>
                     </span>
+                    </div>
                     <?php
                         } else {
                     ?>
