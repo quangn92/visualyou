@@ -157,7 +157,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                         </div>
                     </div>
 					
-                    <div class="custom-large-right-top-column">
+                    <div class="custom-right-top-column">
                         <div class="cnt-cart">
                             <ul class="list-unstyled list-inline">
                             	<?php 
