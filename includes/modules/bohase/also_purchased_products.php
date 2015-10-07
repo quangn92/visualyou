@@ -79,7 +79,12 @@ if (isset($_GET['products_id']) && SHOW_PRODUCT_INFO_COLUMNS_ALSO_PURCHASED_PROD
 		
 		$compare_link='javascript: compareNew('.$also_purchased_products->fields['products_id'].', \'add\')';
 		/*Wishlist/Compare Links Ends*/
-	
+	    
+		
+		//$also_purchased_link = HTTPS_SERVER . DIR_WS_HTTPS_CATALOG;
+		//$also_purchased_link .= 'index.html?action=buy_now&products_id=';
+		//$also_purchased_link .= $also_purchased_products->fields['products_id'];
+		
 		$buy_now = zen_get_buy_now_button($also_purchased_products->fields['products_id'],'');
 		if($buy_now!=NULL){
 			$buy_now = '<a title="Sold Out" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link(zen_get_info_page($also_purchased_products->fields['products_id']), 'cPath=' . $productsInCategory[$also_purchased_products->fields['products_id']] . '&products_id=' . $also_purchased_products->fields['products_id']) . '"><i class="fa fa-ban fa-lg"></i></a>';
@@ -88,7 +93,7 @@ if (isset($_GET['products_id']) && SHOW_PRODUCT_INFO_COLUMNS_ALSO_PURCHASED_PROD
 			$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $also_purchased_products->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 		}
 		else {
-			$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $also_purchased_products->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
+			$buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], 'products_id=' . $also_purchased_products->fields['products_id'] . '&action=buy_now_2') . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 		}
 		
 	  $list_box_contents[$row][$col] = array('params' => 'class="centerBoxContentsAlsoPurch item"', 'text' => (($also_purchased_products->fields['products_image'] == '' and PRODUCTS_IMAGE_NO_IMAGE_STATUS == 0) ? '' : '
