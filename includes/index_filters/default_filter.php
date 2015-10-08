@@ -28,7 +28,7 @@ if (isset($_GET['alpha_filter_id']) && (int)$_GET['alpha_filter_id'] > 0) {
   if (isset($_GET['manufacturers_id']) && $_GET['manufacturers_id'] != '' ) {
     if (isset($_GET['filter_id']) && zen_not_null($_GET['filter_id'])) {
 // We are asked to show only a specific category
-      $listing_sql = "select " . $select_column_list . " p.products_id, p.products_type, p.master_categories_id, p.manufacturers_id, p.products_price, p.products_tax_class_id, pd.products_description, if(s.status = 1, s.specials_new_products_price, NULL) AS specials_new_products_price, IF(s.status = 1, s.specials_new_products_price, p.products_price) as final_price, p.products_sort_order, p.product_is_call, p.product_is_always_free_shipping, p.products_qty_box_status
+      $listing_sql = "select distinct " . $select_column_list . " p.products_id, p.products_type, p.master_categories_id, p.manufacturers_id, p.products_price, p.products_tax_class_id, pd.products_description, if(s.status = 1, s.specials_new_products_price, NULL) AS specials_new_products_price, IF(s.status = 1, s.specials_new_products_price, p.products_price) as final_price, p.products_sort_order, p.product_is_call, p.product_is_always_free_shipping, p.products_qty_box_status
        from " . TABLE_PRODUCTS . " p left join " . TABLE_SPECIALS . " s on p.products_id = s.products_id , " .
        TABLE_PRODUCTS_DESCRIPTION . " pd, " .
        TABLE_MANUFACTURERS . " m, " .
@@ -39,17 +39,29 @@ if (isset($_GET['alpha_filter_id']) && (int)$_GET['alpha_filter_id'] > 0) {
          and p.products_id = p2c.products_id
          and pd.products_id = p2c.products_id
          and pd.language_id = '" . (int)$_SESSION['languages_id'] . "'
+		 ";/* bof all_sub_cats_products */
+         if(!empty($sub_cats)) 
+         	$listing_sql .=  "and p2c.categories_id IN($sub_cats)" .
+         $alpha_sort;
+         else 
+/* eof all_sub_cats_products*/ $listing_sql .=  "
          and p2c.categories_id = '" . (int)$_GET['filter_id'] . "'" .
          $alpha_sort;
     } else {
 // We show them all
-      $listing_sql = "select " . $select_column_list . " p.products_id, p.products_type, p.master_categories_id, p.manufacturers_id, p.products_price, p.products_tax_class_id, pd.products_description, IF(s.status = 1, s.specials_new_products_price, NULL) as specials_new_products_price, IF(s.status = 1, s.specials_new_products_price, p.products_price) as final_price, p.products_sort_order, p.product_is_call, p.product_is_always_free_shipping, p.products_qty_box_status
+      $listing_sql = "select distinct " . $select_column_list . " p.products_id, p.products_type, p.master_categories_id, p.manufacturers_id, p.products_price, p.products_tax_class_id, pd.products_description, IF(s.status = 1, s.specials_new_products_price, NULL) as specials_new_products_price, IF(s.status = 1, s.specials_new_products_price, p.products_price) as final_price, p.products_sort_order, p.product_is_call, p.product_is_always_free_shipping, p.products_qty_box_status
       from " . TABLE_PRODUCTS . " p left join " . TABLE_SPECIALS . " s on p.products_id = s.products_id, " .
       TABLE_PRODUCTS_DESCRIPTION . " pd, " .
       TABLE_MANUFACTURERS . " m
       where p.products_status = 1
         and pd.products_id = p.products_id
         and pd.language_id = '" . (int)$_SESSION['languages_id'] . "'
+		";/* bof all_sub_cats_products */
+         if(!empty($sub_cats)) 
+         	$listing_sql .=  "and p2c.categories_id IN($sub_cats)" .
+         $alpha_sort;
+         else 
+/* eof all_sub_cats_products*/ $listing_sql .=  "
         and p.manufacturers_id = m.manufacturers_id
         and m.manufacturers_id = '" . (int)$_GET['manufacturers_id'] . "'" .
         $alpha_sort;
@@ -58,7 +70,7 @@ if (isset($_GET['alpha_filter_id']) && (int)$_GET['alpha_filter_id'] > 0) {
 // show the products in a given category
     if (isset($_GET['filter_id']) && zen_not_null($_GET['filter_id'])) {
 // We are asked to show only specific category
-      $listing_sql = "select " . $select_column_list . " p.products_id, p.products_type, p.master_categories_id, p.manufacturers_id, p.products_price, p.products_tax_class_id, pd.products_description, IF(s.status = 1, s.specials_new_products_price, NULL) as specials_new_products_price, IF(s.status = 1, s.specials_new_products_price, p.products_price) as final_price, p.products_sort_order, p.product_is_call, p.product_is_always_free_shipping, p.products_qty_box_status
+      $listing_sql = "select distinct " . $select_column_list . " p.products_id, p.products_type, p.master_categories_id, p.manufacturers_id, p.products_price, p.products_tax_class_id, pd.products_description, IF(s.status = 1, s.specials_new_products_price, NULL) as specials_new_products_price, IF(s.status = 1, s.specials_new_products_price, p.products_price) as final_price, p.products_sort_order, p.product_is_call, p.product_is_always_free_shipping, p.products_qty_box_status
       from " . TABLE_PRODUCTS . " p left join " . TABLE_SPECIALS . " s on p.products_id = s.products_id, " .
       TABLE_PRODUCTS_DESCRIPTION . " pd, " .
       TABLE_MANUFACTURERS . " m, " .
@@ -69,11 +81,17 @@ if (isset($_GET['alpha_filter_id']) && (int)$_GET['alpha_filter_id'] > 0) {
         and p.products_id = p2c.products_id
         and pd.products_id = p2c.products_id
         and pd.language_id = '" . (int)$_SESSION['languages_id'] . "'
+		";/* bof all_sub_cats_products */
+         if(!empty($sub_cats)) 
+         	$listing_sql .=  "and p2c.categories_id IN($sub_cats)" .
+         $alpha_sort;
+         else 
+/* eof all_sub_cats_products*/ $listing_sql .=  "
         and p2c.categories_id = '" . (int)$current_category_id . "'" .
         $alpha_sort;
     } else {
 // We show them all
-      $listing_sql = "select " . $select_column_list . " p.products_id, p.products_type, p.master_categories_id, p.manufacturers_id, p.products_price, p.products_tax_class_id, pd.products_description, IF(s.status = 1, s.specials_new_products_price, NULL) as specials_new_products_price, IF(s.status =1, s.specials_new_products_price, p.products_price) as final_price, p.products_sort_order, p.product_is_call, p.product_is_always_free_shipping, p.products_qty_box_status
+      $listing_sql = "select distinct " . $select_column_list . " p.products_id, p.products_type, p.master_categories_id, p.manufacturers_id, p.products_price, p.products_tax_class_id, pd.products_description, IF(s.status = 1, s.specials_new_products_price, NULL) as specials_new_products_price, IF(s.status =1, s.specials_new_products_price, p.products_price) as final_price, p.products_sort_order, p.product_is_call, p.product_is_always_free_shipping, p.products_qty_box_status
        from " . TABLE_PRODUCTS_DESCRIPTION . " pd, " .
        TABLE_PRODUCTS . " p left join " . TABLE_MANUFACTURERS . " m on p.manufacturers_id = m.manufacturers_id, " .
        TABLE_PRODUCTS_TO_CATEGORIES . " p2c left join " . TABLE_SPECIALS . " s on p2c.products_id = s.products_id
@@ -81,6 +99,12 @@ if (isset($_GET['alpha_filter_id']) && (int)$_GET['alpha_filter_id'] > 0) {
          and p.products_id = p2c.products_id
          and pd.products_id = p2c.products_id
          and pd.language_id = '" . (int)$_SESSION['languages_id'] . "'
+		 ";/* bof all_sub_cats_products */
+         if(!empty($sub_cats)) 
+         	$listing_sql .=  "and p2c.categories_id IN($sub_cats)" .
+         $alpha_sort;
+         else 
+/* eof all_sub_cats_products*/ $listing_sql .=  "
          and p2c.categories_id = '" . (int)$current_category_id . "'" .
          $alpha_sort;
     }

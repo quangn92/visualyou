@@ -34,7 +34,7 @@
 	?>
 	<div class="category-info">
     	<div class="category-details">
-			<--!<h2 class="category-title"><?php echo $breadcrumb->last(); ?></h2>-->
+			<h2 class="category-title"><?php echo $breadcrumb->last(); ?></h2>
 			<?php
             // categories_description
                 if ($current_categories_description != '') {

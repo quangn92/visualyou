@@ -15,10 +15,18 @@ $zco_notifier->notify('NOTIFY_HEADER_START_INDEX');
 // the following cPath references come from application_top/initSystem
 $category_depth = 'top';
 if (isset($cPath) && zen_not_null($cPath)) {
+  // bof all_sub_cats_products
+  $_SESSION['category_tree']->build_deepest_level_children();
+  $sub_cats = implode(',',$_SESSION['category_tree']->retrieve_deepest_level_children($cPath));
+  if(!empty($sub_cats))
+  	$categories_products_query = "SELECT count(*) AS total
+                                FROM   " . TABLE_PRODUCTS_TO_CATEGORIES . "
+                                WHERE   categories_id IN ($sub_cats)";
+   else	
+   // eof all_sub_cats_products
   $categories_products_query = "SELECT count(*) AS total
                                 FROM   " . TABLE_PRODUCTS_TO_CATEGORIES . "
                                 WHERE   categories_id = :categoriesID";
-
   $categories_products_query = $db->bindVars($categories_products_query, ':categoriesID', $current_category_id, 'integer');
   $categories_products = $db->Execute($categories_products_query);
 
