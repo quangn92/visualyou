@@ -157,14 +157,20 @@
 			
 			/*Add to Cart Button*/
 			$buy_now = zen_get_buy_now_button($products_new->fields['products_id'],'');
+			$gridview_buy_now = zen_get_buy_now_button($products_new->fields['products_id'],'');
 			if($buy_now!=NULL){
 				$buy_now ='<a class="btn btn-dark-blue btn-small-med btn-trans">'.$buy_now.'</a>';
+				$gridview_buy_now = '<a title="Sold Out" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link(zen_get_info_page($products_new->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($products_new->fields['master_categories_id']) . '&products_id=' . $products_new->fields['products_id']) . '"><i class="fa fa-ban fa-lg"></i></a>';
 			}
 			elseif($attribute_product == $pid) {
 				$buy_now = zen_get_buy_now_button($products_new->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_new->fields['products_id']) . '">Select Options</a>');
+				
+				$gridview_buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_new->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 			}
 			else {
 				$buy_now = zen_get_buy_now_button($products_new->fields['products_id'],'<a class="btn btn-dark-blue btn-small-med btn-trans" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_new->fields['products_id']) . '">Add to Cart</a>');
+				
+				$gridview_buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_new->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
 			}
 			
 			/*Wishlist Links*/
@@ -174,17 +180,6 @@
 	
 			$gridview_compare_link='javascript: compareNew('.$products_new->fields['products_id'].', \'add\')';
 			
-			/*Add to Cart Button*/
-			$gridview_buy_now = zen_get_buy_now_button($featured_products->fields['products_id'],'');
-			if($gridview_buy_now!=NULL){
-				$gridview_buy_now = '<a title="Sold Out" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link(zen_get_info_page($products_new->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($products_new->fields['master_categories_id']) . '&products_id=' . $products_new->fields['products_id']) . '"><i class="fa fa-ban fa-lg"></i></a>';
-			}
-			elseif($attribute_product == $pid) {
-				$gridview_buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_new->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
-			}
-			else {				
-				$gridview_buy_now = '<a title="Add to Cart" class="detailbutton-wrapper add-to-cart" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_new->fields['products_id']) . '"><i class="fa fa-shopping-cart fa-lg"></i></a>'; 
-			}
  ?>
  <?php 
  if((isset($_GET['view'])) && ($_GET['view']=='rows')){ $pos_list='style="display: block; opacity: 1;"';}else{ $pos_list='style="display: inline-block; opacity: 1;"'; }
