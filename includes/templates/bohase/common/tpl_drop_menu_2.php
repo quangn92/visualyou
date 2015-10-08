@@ -30,7 +30,7 @@
           	</li><?php */?>
             <!--Categories Link in Menu-->
 			<li>
-				<a href="https://www.visual-you.com/catalog/products_new.html">NEW Products</a>
+				<a href="https://www.visual-you.com/catalog/products_new.html">NEW Arrivals</a>
 			</li>
 			<?php			
          		// load the UL-generator class and produce the menu list dynamically from there
