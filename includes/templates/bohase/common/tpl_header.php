@@ -313,7 +313,7 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
 						</div>
 						<div style="position: relative; width: 25%; height: 134px; float:left;">
 						<div style="position: absolute; bottom: 0; right: 0;">
-							<div class="fb-like" style="margin-right: 5px;" data-href="<?php echo $facebook_link; ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+							<div class="fb-like" style="float: left; margin-right: 5px;" data-href="<?php echo $facebook_link; ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 
 								<a target="_blank" href="<?php echo $instagram_link; ?>">
 								<img style="margin-bottom: 15px;" src="https://www.visual-you.com/images/new_social_mini_ig.gif" width="25" height="25"></a>
