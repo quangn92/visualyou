@@ -29,6 +29,9 @@
               	</a>
           	</li><?php */?>
             <!--Categories Link in Menu-->
+			<li>
+				<a href="https://www.visual-you.com/catalog/products_new.html">NEW Products</a>
+			</li>
 			<?php			
          		// load the UL-generator class and produce the menu list dynamically from there
          		require_once (DIR_WS_CLASSES . 'categories_ul_generator_menu_style_2.php');
