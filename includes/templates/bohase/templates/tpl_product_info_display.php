@@ -282,7 +282,7 @@
                 
                 <div id="delivery" class="tab-pane">
                     <div class="product-tab">
-						<iframe src="https://www.visual-you.com/catalog/includes/templates/bohase/common/delivery.html" allowtransparency="true" scrolling="no" style="border:none; overflow:hidden; width:920px; height: 250px;" frameborder="0"></iframe>
+						<iframe src="https://www.visual-you.com/catalog/includes/templates/bohase/common/delivery.html" allowtransparency="true" scrolling="no" style="border:none; overflow:hidden;" frameborder="0"></iframe>
                     </div>
                 </div>
                 
