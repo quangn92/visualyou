@@ -12,6 +12,7 @@
   
   $content .= '<div id="' . str_replace('_', '-', $box_id . 'Content') . '" class="sideBoxContent">' . "\n";
   $content .= '<ul>' . "\n";
+  $content .= '<li><a class="category-top" href="https://www.visual-you.com/catalog/products_new.html">NEW ARRIVALS</a></li>';
   
   for ($i=0;$i<sizeof($box_categories_array);$i++) {
     switch(true) {
