@@ -119,15 +119,15 @@
 		
 		$url_string = explode('/', $_SERVER['REQUEST_URI']);
 		if ($current_category_id == '198' or $current_category_id == '9' or $current_category_id == '160' or $current_category_id == '133' or $current_category_id == '144' or $url_string[2] == 'coupons-specials-ezp-23.html') {
+
+			$content .= '<li><a class="category-products" href="https://www.visual-you.com/catalog/more-c-198/mystery-bags-c-198_9/"><i class="fa fa-angle-right"></i>Mystery Bags</a></li>' . "\n";
+			$content .= '<li><a class="category-links" href="https://www.visual-you.com/catalog/coupons-specials-ezp-23.html"><i class="fa fa-angle-right"></i>Coupons & Specials</a></li>' . "\n";
 			$content .= '<li><a class="category-subs" href="https://www.visual-you.com/catalog/more-c-198/japan-panda-fundraiser-c-198_160/"><i class="fa fa-angle-right"></i>Fundraiser</a></li>' . "\n";
 			if ($current_category_id == '160' or $current_category_id == '133' or $current_category_id == '144') {
 				
 				$content .= '<li><a class="category-products" href="https://www.visual-you.com/catalog/index&amp;pg=store.html?cPath=198_160_133">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i>Love 4 Japan FUNDRAISER</a></li>' . "\n";
 				$content .= '<li><a class="category-products" href="https://www.visual-you.com/catalog/index&amp;pg=store.html?cPath=198_160_144">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i>Adopt a Panda FUNDRAISER</a></li>' . "\n";
 			}
-
-			$content .= '<li><a class="category-products" href="https://www.visual-you.com/catalog/more-c-198/mystery-bags-c-198_9/"><i class="fa fa-angle-right"></i>Mystery Bags</a></li>' . "\n";
-			$content .= '<li><a class="category-links" href="https://www.visual-you.com/catalog/coupons-specials-ezp-23.html"><i class="fa fa-angle-right"></i>Coupons & Specials</a></li>' . "\n";
 		}
 		$content .= '</ul>' . "\n";
 	}
