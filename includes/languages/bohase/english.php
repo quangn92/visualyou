@@ -190,7 +190,7 @@
   define('ENTRY_LAST_NAME_TEXT', '*');
   define('ENTRY_DATE_OF_BIRTH', 'Date of Birth:');
   define('ENTRY_DATE_OF_BIRTH_ERROR', 'Is your birth date correct? Our system requires the date in this format: MM/DD/YYYY (eg 05/21/1970)');
-  define('ENTRY_DATE_OF_BIRTH_TEXT', '* (eg. 05/21/1970)');
+  define('ENTRY_DATE_OF_BIRTH_TEXT', '(eg. 05/21/1970)');
   define('ENTRY_EMAIL_ADDRESS', 'Email Address:');
   define('ENTRY_EMAIL_ADDRESS_ERROR', 'Is your email address correct? It should contain at least ' . ENTRY_EMAIL_ADDRESS_MIN_LENGTH . ' characters. Please try again.');
   define('ENTRY_EMAIL_ADDRESS_CHECK_ERROR', '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Sorry, my system does not understand your email address. Please try again.');
@@ -224,7 +224,7 @@
   define('ENTRY_COUNTRY_TEXT', '*');
   define('ENTRY_TELEPHONE_NUMBER', 'Telephone:');
   define('ENTRY_TELEPHONE_NUMBER_ERROR', 'Your Telephone Number must contain a minimum of ' . ENTRY_TELEPHONE_MIN_LENGTH . ' characters.');
-  define('ENTRY_TELEPHONE_NUMBER_TEXT', '*');
+  define('ENTRY_TELEPHONE_NUMBER_TEXT', '');
   define('ENTRY_FAX_NUMBER', 'Fax Number:');
   define('ENTRY_FAX_NUMBER_ERROR', '');
   define('ENTRY_FAX_NUMBER_TEXT', '');

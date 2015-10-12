@@ -25,7 +25,7 @@ define('TEXT_PRODUCT_DESCRIPTION', 'Description');
 define('TEXT_PRODUCT_REVIEWS', 'Reviews');
 define('TEXT_PRODUCT_COMMENTS', 'Comments');
 define('TEXT_SIZE_CHART', 'Size Chart');
-define('TEXT_DELIVERY', 'Delivery');
+define('TEXT_DELIVERY', 'Specials');
 
 
 
