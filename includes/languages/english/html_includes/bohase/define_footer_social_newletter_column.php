@@ -51,5 +51,7 @@
                                     <!--End mc_embed_signup-->
                                 </div>
                             </div>
-                            
+                            <div style="font-size:12px; margin-top: 3px; color: #697175;">
+                                <p>Awesomeness in your inbox!  Never miss out on <br> Exclusive news, products & deals! </p>
+                            </div>    
                     	</div>
