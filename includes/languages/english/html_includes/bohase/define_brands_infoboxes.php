@@ -50,7 +50,7 @@
                     <div class="col-md-3 col-sm-6 col-xs-12 col-md-3">
                         <div class="info-box">
                             <div class="row">
-                            <a href="https://www.visual-you.com/catalog/shippinginfo.html ">
+                            <a href="https://www.visual-you.com/catalog/shippinginfo ">
                                 <div class="col-xs-2">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
@@ -67,7 +67,7 @@
                     <div class="col-md-3 col-sm-6 col-xs-12 col-md-3">
                         <div class="info-box">
                             <div class="row">
-                            <a href="https://www.visual-you.com/catalog/visual-you-donates-ezp-32.html">
+                            <a href="https://www.visual-you.com/catalog/visual-you-donates-ezp-41">
                                 <div class="col-xs-2">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
