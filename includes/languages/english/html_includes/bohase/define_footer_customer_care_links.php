@@ -6,7 +6,7 @@
 		
 			<li class="contact_us">
 
-				<a href="https://www.visual-you.com/catalog/contact_us.html">
+				<a href="https://www.visual-you.com/catalog/contact_us">
 
 					<?php echo HEADER_TITLE_CONTACT_US; ?>
 					
@@ -16,7 +16,7 @@
 
 				<li>
 
-					<a href="https://www.visual-you.com/catalog/order-payment-ezp-45.html">
+					<a href="https://www.visual-you.com/catalog/order-payment-ezp-45">
 
 						Order & Payment
 
@@ -26,7 +26,7 @@
 
 				<li>
 
-					<a href="https://www.visual-you.com/catalog/return-amp-exchange-policy-ezp-27.html">
+					<a href="https://www.visual-you.com/catalog/return-amp-exchange-policy-ezp-27">
 
 						Return & Exchange
 
@@ -36,7 +36,7 @@
 
 				<li>
 
-					<a href="https://www.visual-you.com/catalog/faq-ezp-21.html">
+					<a href="https://www.visual-you.com/catalog/faq-ezp-21">
 
 						FAQ
 
@@ -46,7 +46,7 @@
 
 				<li>
 
-					<a href="https://www.visual-you.com/catalog/account.html">
+					<a href="https://www.visual-you.com/catalog/account">
 
 						My Account
 

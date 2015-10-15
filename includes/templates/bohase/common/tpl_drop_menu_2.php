@@ -19,7 +19,6 @@
 // +----------------------------------------------------------------------+
 // $Id: tpl_drop_menu.php  2005/06/15 15:39:05 DrByte Exp $
 //
-
 ?>
 	<!-- menu area -->
          <ul id="nav" class="nav navbar-nav">
@@ -29,9 +28,11 @@
               	</a>
           	</li><?php */?>
             <!--Categories Link in Menu-->
-			<li>
-				<a href="https://www.visual-you.com/catalog/products_new.html">NEW Arrivals</a>
-			</li>
+			<?php 
+				$new_product_link .= '<li><a class="category-links" href="' . zen_href_link(FILENAME_PRODUCTS_NEW) . '">' . CATEGORIES_BOX_HEADING_WHATS_NEW . '</a></li>';
+				echo $new_product_link;
+			?>
+			
 			<?php			
          		// load the UL-generator class and produce the menu list dynamically from there
          		require_once (DIR_WS_CLASSES . 'categories_ul_generator_menu_style_2.php');
