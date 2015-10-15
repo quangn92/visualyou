@@ -1,0 +1,489 @@
+.countdown {
+    width: 100%;
+    max-width: 250px;
+    clear: both;
+    margin: 0px;
+}
+
+.big-title-big {
+    font-family: "Lobster Two",sans-serif,Arial;
+    font-size: 20px;
+    color: #f04d3b;
+    font-style: italic;
+}
+
+.big-title-big a:visited {
+	color: #F04D3B;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.big-title-big a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: #0092c2;
+}
+
+.title-small a:visited {
+	color: #F04D3B;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.title-small a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: #0092c2;
+}
+
+.flip-countdown {
+    clear: both;
+    width: 100%;
+    margin: 0px;
+}
+.flip-countdown .unit-wrap { float: left }
+.flip-countdown .unit-wrap>span {
+    font-family: Arial;
+    color: #555;
+}
+.flip-countdown {
+    font-family: 'Unica One',cursive;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.flip-countdown div.digits {
+    border-radius: 5px;
+    float: left;
+    position: relative;
+}
+.flip-countdown .unit-wrap:last-child,
+.flip-countdown div.digits:last-child { margin: 0!important }
+.flip-countdown div.digits div.digits-inner {
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    display: none;
+}
+.flip-countdown div.digits div.digits-inner div.flip-wrap {
+    height: 100%;
+    -webkit-perspective: 100px;
+    -moz-perspective: 100px;
+    perspective: 100px;
+}
+.flip-countdown div.digits div.digits-inner div.flip-wrap div {
+    height: 50%;
+    left: 0;
+    position: absolute;
+    outline: transparent solid 1px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+}
+.flip-countdown div.digits div.digits-inner div.flip-wrap div .shadow {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+.flip-countdown div.digits div.digits-inner div.flip-wrap div.up {
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    top: 0;
+}
+.flip-countdown div.digits div.digits-inner div.flip-wrap div.down {
+    bottom: 0;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+}
+.flip-countdown div.digits div.digits-inner div.flip-wrap div div.inn {
+    background-color: #191919;
+    border-radius: 5px;
+    color: #fff;
+    height: 200%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+.flip-countdown div.digits div.digits-inner div.flip-wrap div.up div.inn {
+    background: #373737;
+    top: 0;
+}
+.flip-countdown div.digits div.digits-inner div.flip-wrap div.down div.inn { bottom: 0 }
+.flip-countdown div.play div.digits-inner.before {
+    z-index: 3;
+    display: block;
+}
+.flip-countdown div.play div.digits-inner.active {
+    -webkit-animation: asd .5s .5s linear both;
+    -moz-animation: asd .5s .5s linear both;
+    animation: asd .5s .5s linear both;
+    z-index: 1;
+}
+@-webkit-keyframes asd { 
+    0% { z-index: 2 }
+    100%,
+    20% { z-index: 4 }
+}
+@-moz-keyframes asd { 
+    0% { z-index: 2 }
+    100%,
+    20% { z-index: 4 }
+}
+@-o-keyframes asd { 
+    0% { z-index: 2 }
+    100%,
+    20% { z-index: 4 }
+}
+@keyframes asd { 
+    0% { z-index: 2 }
+    100%,
+    20% { z-index: 4 }
+}
+.flip-countdown div.play div.digits-inner.active .down {
+    -webkit-animation: turn .5s .5s linear both;
+    -moz-animation: turn .5s .5s linear both;
+    animation: turn .5s .5s linear both;
+    z-index: 2;
+}
+@-webkit-keyframes turn { 
+    0% { -webkit-transform: rotateX(90deg) }
+    100% { -webkit-transform: rotateX(0deg) }
+}
+@-moz-keyframes turn { 
+    0% { -moz-transform: rotateX(90deg) }
+    100% { -moz-transform: rotateX(0deg) }
+}
+@-o-keyframes turn { 
+    0% { -o-transform: rotateX(90deg) }
+    100% { -o-transform: rotateX(0deg) }
+}
+@keyframes turn { 
+    0% { transform: rotateX(90deg) }
+    100% { transform: rotateX(0deg) }
+}
+.flip-countdown div.play div.digits-inner.before .up {
+    -webkit-animation: turn2 .5s linear both;
+    -moz-animation: turn2 .5s linear both;
+    animation: turn2 .5s linear both;
+    z-index: 2;
+}
+@-webkit-keyframes turn2 { 
+    0% { -webkit-transform: rotateX(0deg) }
+    100% { -webkit-transform: rotateX(-90deg) }
+}
+@-moz-keyframes turn2 { 
+    0% { -moz-transform: rotateX(0deg) }
+    100% { -moz-transform: rotateX(-90deg) }
+}
+@-o-keyframes turn2 { 
+    0% { -o-transform: rotateX(0deg) }
+    100% { -o-transform: rotateX(-90deg) }
+}
+@keyframes turn2 { 
+    0% { transform: rotateX(0deg) }
+    100% { transform: rotateX(-90deg) }
+}
+.flip-countdown div div.digits-inner.active {
+    z-index: 3;
+    display: block;
+}
+.flip-countdown div.play div.digits-inner.before .up .shadow {
+    -webkit-animation: show .5s linear both;
+    -moz-animation: show .5s linear both;
+    animation: show .5s linear both;
+    background: -moz-linear-gradient(top,rgba(0,0,0,.1) 0,#000 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(0,0,0,.1)),color-stop(100%,#000));
+    background: 0 0,top,0,100% #000;
+    background: -o-linear-gradient(top,rgba(0,0,0,.1) 0,#000 100%);
+    background: -ms-linear-gradient(top,rgba(0,0,0,.1) 0,#000 100%);
+    background: 0 0,bottom,0,100% #000;
+    border-radius: 5px 5px 0 0;
+}
+.flip-countdown div.play div.digits-inner.active .up .shadow {
+    -webkit-animation: hide .5s .3s linear both;
+    -moz-animation: hide .5s .3s linear both;
+    animation: hide .5s .3s linear both;
+    background: -moz-linear-gradient(top,rgba(0,0,0,.1) 0,#000 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(0,0,0,.1)),color-stop(100%,#000));
+    background: 0 0,top,0,100% #000;
+    background: -o-linear-gradient(top,rgba(0,0,0,.1) 0,#000 100%);
+    background: -ms-linear-gradient(top,rgba(0,0,0,.1) 0,#000 100%);
+    background: 0 0,bottom,0,100% #000;
+    border-radius: 5px 5px 0 0;
+}
+.flip-countdown div.play div.digits-inner.before .down .shadow {
+    -webkit-animation: show .5s linear both;
+    -moz-animation: show .5s linear both;
+    animation: show .5s linear both;
+    background: -moz-linear-gradient(top,#000 0,rgba(0,0,0,.1) 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#000),color-stop(100%,rgba(0,0,0,.1)));
+    background: 0 0,top,0,100% rgba(0,0,0,.1);
+    background: -o-linear-gradient(top,#000 0,rgba(0,0,0,.1) 100%);
+    background: -ms-linear-gradient(top,#000 0,rgba(0,0,0,.1) 100%);
+    background: 0 0,bottom,0,100% rgba(0,0,0,.1);
+    border-radius: 0 0 5px 5px;
+}
+.flip-countdown div.play div.digits-inner.active .down .shadow {
+    -webkit-animation: hide .5s .3s linear both;
+    -moz-animation: hide .5s .3s linear both;
+    animation: hide .5s .2s linear both;
+    background: -moz-linear-gradient(top,#000 0,rgba(0,0,0,.1) 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#000),color-stop(100%,rgba(0,0,0,.1)));
+    background: 0 0,top,0,100% rgba(0,0,0,.1);
+    background: -o-linear-gradient(top,#000 0,rgba(0,0,0,.1) 100%);
+    background: -ms-linear-gradient(top,#000 0,rgba(0,0,0,.1) 100%);
+    background: 0 0,bottom,0,100% rgba(0,0,0,.1);
+    border-radius: 0 0 5px 5px;
+}
+@-webkit-keyframes show { 
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+@-moz-keyframes show { 
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+@-o-keyframes show { 
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+@keyframes show { 
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+@-webkit-keyframes hide { 
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+@-moz-keyframes hide { 
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+@-o-keyframes hide { 
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+@keyframes hide { 
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+.flip-countdown {
+    max-width: 196px;
+    height: 58px;
+}
+.flip-countdown div.unit-wrap {
+    width: 60px;
+    margin: 0 8px 0 0;
+    text-align: center;
+}
+.flip-countdown div.digits {
+    width: 29px;
+    height: 42px;
+    line-height: 42px;
+    margin: 0 2px 0 0;
+}
+.flip-countdown div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 32px }
+.flip-countdown .unit-wrap>span { font-size: 11px }
+.flip-countdown.countdown-large {
+    max-width: 169px;
+    height: 50px;
+}
+.flip-countdown.countdown-large div.unit-wrap {
+    width: 52px;
+    margin: 0 6px 0 0;
+}
+.flip-countdown.countdown-large div.digits {
+    width: 25px;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 2px 0 0;
+}
+.flip-countdown.countdown-large div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 28px }
+.flip-countdown.countdown-large .unit-wrap>span {
+    font-size: 10px;
+    display: block;
+    margin-top: 40px;
+}
+.flip-countdown.countdown-medium {
+    max-width: 150px;
+    height: 40px;
+}
+.flip-countdown.countdown-medium div.unit-wrap {
+    width: 46px;
+    margin: 0 6px 0 0;
+}
+.flip-countdown.countdown-medium div.digits {
+    width: 22px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 1px 0 0;
+}
+.flip-countdown.countdown-medium div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 24px }
+.flip-countdown.countdown-medium .unit-wrap>span {
+    font-size: 9px;
+    display: block;
+    margin-top: 31px;
+}
+.flip-countdown.countdown-small {
+    max-width: 126px;
+    height: 39px;
+}
+.flip-countdown.countdown-small div.unit-wrap {
+    width: 39px;
+    margin: 0 4px 0 0;
+}
+.flip-countdown.countdown-small div.digits {
+    width: 19px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 1px 0 0;
+}
+.flip-countdown.countdown-small div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 24px }
+.flip-countdown.countdown-small .unit-wrap>span {
+    font-size: 8px;
+    display: block;
+    margin-top: 32px;
+}
+.flip-countdown.countdown-xsmall {
+    max-width: 120px;
+    height: 37px;
+}
+.flip-countdown.countdown-xsmall div.unit-wrap {
+    width: 37px;
+    margin: 0 4px 0 0;
+}
+.flip-countdown.countdown-xsmall div.digits {
+    width: 18px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 1px 0 0;
+}
+.flip-countdown.countdown-xsmall div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 19px }
+.flip-countdown.countdown-xsmall .unit-wrap>span {
+    font-size: 8px;
+    display: block;
+    margin-top: 30px;
+}
+.countdown-days {
+    max-width: 240px;
+    height: 53px;
+}
+.countdown-days div.unit-wrap {
+    width: 47px;
+    margin: 0 8px 0 0;
+}
+.countdown-days div.digits {
+    width: 22px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 2px 0 0;
+}
+
+.countdown-days div.text-wrap {
+    font-size: 18px;
+    float: left;
+    width: 240px;
+    margin: 6px 2px 0 0;
+}
+
+.clock-float {
+	float: left;
+	padding: 0px 0px 0px 100px;
+}
+
+.countdown-days div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 30px }
+.countdown-days .unit-wrap>span {
+    font-size: 11px;
+    display: block;
+    margin-top: 43px;
+}
+.countdown-days.countdown-large {
+    max-width: 214px;
+    height: 52px;
+}
+.countdown-days.countdown-large div.unit-wrap {
+    width: 48px;
+    margin: 0 7px 0 0;
+}
+.countdown-days.countdown-large div.digits {
+    width: 23px;
+    height: 34px;
+    line-height: 34px;
+    margin: 0 2px 0 0;
+}
+.countdown-days.countdown-large div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 24px }
+.countdown-days.countdown-large .unit-wrap>span {
+    font-size: 10px;
+    display: block;
+    margin-top: 37px;
+}
+.countdown-days.countdown-medium {
+    max-width: 198px;
+    height: 41px;
+}
+.countdown-days.countdown-medium div.unit-wrap {
+    width: 45px;
+    margin: 0 6px 0 0;
+}
+.countdown-days.countdown-medium div.digits {
+    width: 22px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 1px 0 0;
+}
+.countdown-days.countdown-medium div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 24px }
+.countdown-days.countdown-medium .unit-wrap>span {
+    font-size: 9px;
+    display: block;
+    margin-top: 32px;
+}
+.countdown-days.countdown-small {
+    max-width: 168px;
+    height: 39px;
+}
+.countdown-days.countdown-small div.unit-wrap {
+    width: 39px;
+    margin: 0 4px 0 0;
+}
+.countdown-days.countdown-small div.digits {
+    width: 19px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 1px 0 0;
+}
+.countdown-days.countdown-small div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 24px }
+.countdown-days.countdown-small .unit-wrap>span {
+    font-size: 8px;
+    display: block;
+    margin-top: 32px;
+}
+.countdown-days.countdown-xsmall {
+    max-width: 120px;
+    height: 30px;
+}
+.countdown-days.countdown-xsmall div.unit-wrap {
+    width: 27px;
+    margin: 0 4px 0 0;
+}
+.countdown-days.countdown-xsmall div.digits {
+    width: 13px;
+    height: 24px;
+    line-height: 24px;
+    margin: 0 1px 0 0;
+}
+.countdown-days.countdown-xsmall div.digits div.digits-inner div.flip-wrap div div.inn { font-size: 18px }
+.countdown-days.countdown-xsmall .unit-wrap>span {
+    font-size: 6px;
+    display: block;
+    margin-top: 0px !important;
+}
+
+.flip-countdown { }
