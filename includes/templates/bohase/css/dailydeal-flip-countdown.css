@@ -7,30 +7,24 @@
 
 .big-title-big {
     font-family: "Lobster Two",sans-serif,Arial;
-    font-size: 20px;
-    color: #f04d3b;
+    font-size: 19px;
+    color: #7B7B7B;
     font-style: italic;
 }
 
+a.custom-lnk {
+	color: #7B7B7B;
+	text-decoration: underline; }
+}
+
 .big-title-big a:visited {
-	color: #F04D3B;
-    text-decoration: none;
+	color: #7B7B7B;
+    text-decoration: underline;
     font-weight: normal;
 }
 
 .big-title-big a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: #0092c2;
-}
-
-.title-small a:visited {
-	color: #F04D3B;
-    text-decoration: none;
-    font-weight: normal;
-}
-
-.title-small a:hover, a:focus, a:active {
-    text-decoration: none;
+    text-decoration: underline;
     color: #0092c2;
 }
 
@@ -377,11 +371,11 @@
     height: 53px;
 }
 .countdown-days div.unit-wrap {
-    width: 47px;
-    margin: 0 8px 0 0;
+    width: 40px;
+    margin: 0 7px 0 0;
 }
 .countdown-days div.digits {
-    width: 22px;
+    width: 19px;
     height: 40px;
     line-height: 40px;
     margin: 0 2px 0 0;
