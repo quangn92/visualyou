@@ -2672,9 +2672,7 @@ ul.social_bookmarks .fa {
     position: relative;
     text-transform: uppercase;
 }
-#centercontent-wrapper #specialsListing > header {
-    margin: 0;
-}
+
 #centercontent-wrapper header > h4 {
     color: #666666;
     display: inline-block;
