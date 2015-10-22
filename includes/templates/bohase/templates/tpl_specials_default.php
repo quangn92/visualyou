@@ -11,9 +11,34 @@
 ?>
 <div class="centerColumn" id="specialsListing">
 
-<header>
-	<h4 id="specialsListingHeading"><?php echo $breadcrumb->last(); ?></h4>
-</header>
+	<div class="category-info">
+    	<div class="category-details">
+			<h2 class="category-title" style="margin-bottom: 6px;"><?php echo $breadcrumb->last(); ?></h2>
+				<p align="center"><img src="https://www.visual-you.com/images/vu_halloween2015_special_banner01.jpg"></p>
+				<p align="center">&nbsp;</p> 
+
+				<div align="center">
+					<table border="0" width="85%">
+						<tbody>
+							<tr>
+								<td>
+									<p style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;" align="center">
+									&nbsp;</p>
+									<p align="center">
+										<span style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">
+										Our special SALE for the upcoming Halloween! ^_^</span>
+									</p>
+									&nbsp;
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<p></p>
+		</div>
+	</div>
+	
 <!-- bof: specials -->
 <?php
 /********************************** GRID LIST VIEW ***************************************/
