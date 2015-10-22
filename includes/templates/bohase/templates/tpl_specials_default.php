@@ -13,7 +13,8 @@
 
 	<div class="category-info">
     	<div class="category-details">
-			<h2 class="category-title" style="margin-bottom: 6px;"><?php echo $breadcrumb->last(); ?></h2>
+			<!-- <h2 class="category-title" style="margin-bottom: 6px;"><?php echo $breadcrumb->last(); ?></h2> -->
+			<h2 class="category-title" style="margin-bottom: 6px;">Sale</h2>
 				<p align="center"><img src="https://www.visual-you.com/images/vu_halloween2015_special_banner01.jpg"></p>
 				<p align="center">&nbsp;</p> 
 
