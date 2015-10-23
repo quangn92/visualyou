@@ -194,6 +194,80 @@
 			<!-- Go to www.addthis.com/dashboard to customize your tools -->
             <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ff0023c7cbb528" async="async"></script>
 			
+		    <!-- Counter timer begins -->			
+			<div class="countdown">
+				<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Unica+One:400|Lobster+Two">
+				<script src="/catalog/includes/templates/bohase/jscript/dailydeal-jquery.min.js" type="text/javascript"></script>
+				<script src="/catalog/includes/templates/bohase/jscript/dailydeal-flip-countdown.js" type="text/javascript"></script>
+				<link href="/catalog/includes/templates/bohase/css/dailydeal-flip-countdown.css" rel="stylesheet" type="text/css" media="all">
+
+				<style>
+					.countdown div.digits div.digits-inner div.flip-wrap div.up div.inn, .countdown div.digits div.digits-inner div.flip-wrap div.down div.inn { background: #F04D3B; color: #FFFFFF; }
+					.countdown .unit-wrap > span { color: #333333; }
+				</style>
+				<span class="big-title-big"><a class="custom-lnk" title="Relaunch Specials" href="https://www.visual-you.com/catalog/coupons-specials-ezp-23">Halloween Specials</a> ends in</span>
+				<div class="flip-countdown countdown-days" id="clock">
+					<div class="unit-wrap">
+						<div class="days">										
+						</div>
+						<span class="ce-days-label">DAYS</span>
+					</div>
+					<div class="unit-wrap">
+						<div class="hours"></div>
+						<span class="ce-hours-label">HOURS</span>
+					</div>
+					<div class="unit-wrap">
+						<div class="minutes"></div>
+						<span>MINS</span>
+					</div>
+					<div class="unit-wrap">
+						<div class="seconds"></div>
+						<span class="ce-seconds-label">SECONDS</span>
+					</div>
+				</div>
+				<script type="text/javascript">
+					var productsDateTimeTo = {};productsDateTimeTo["2015-10-27 00:30:00"] = "clock";
+					var dateTimeTo = false;
+					jQueryDD.each(productsDateTimeTo, function(time, product_ids) {
+						dateTimeTo = time;
+					});
+
+					if (dateTimeTo === false) {
+						jQueryDD('#clock').parent().remove();
+					}
+					var countdownId = "";
+					var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+					for( var i=0; i < 5; i++ ) countdownId += possible.charAt(Math.floor(Math.random() * possible.length));
+					jQueryDD('#clock').attr({'id':'clock-'+countdownId});
+
+					var gmt = -07;
+					var aDate = new Date();
+					var utc = aDate.getTime() + (aDate.getTimezoneOffset() * 60000);
+					var newdate = new Date(utc + (3600000*gmt));
+					var monthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+					var hours = newdate.getHours().toString();
+					if (hours.length==1) {
+						hours = '0'+hours;
+					}
+					var minutes = newdate.getMinutes().toString();
+					if (minutes.length==1) {
+						minutes = '0'+minutes;
+					}
+					var seconds = newdate.getSeconds().toString();
+					if (seconds.length==1) {
+						seconds = '0'+seconds;
+					}
+
+					var currentDate = monthNames[newdate.getMonth()]+' '+newdate.getDate()+', '+newdate.getFullYear()+' '+hours+':'+minutes+':'+seconds;
+					
+					if (dateTimeTo !== false) {
+						var dateTimeArray = dateTimeTo.split(' ');
+						runCountdown('clock-'+countdownId,dateTimeArray[0],dateTimeArray[1],currentDate,'DAYS','HOURS','MINUTES','SECONDS');
+					}
+				</script>
+			</div>
+		    <!-- Counter timer ends-->
+			
 		    <!-- Product model -->
 		    <div style="margin-top: 15px;">
 		    <?php if ( (($flag_show_product_info_model == 1 and $products_model != '') or ($flag_show_product_info_weight == 1 and $products_weight !=0) or ($flag_show_product_info_quantity == 1) or ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name))) ) { ?>
