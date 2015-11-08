@@ -205,7 +205,7 @@
 					.countdown div.digits div.digits-inner div.flip-wrap div.up div.inn, .countdown div.digits div.digits-inner div.flip-wrap div.down div.inn { background: #F04D3B; color: #FFFFFF; }
 					.countdown .unit-wrap > span { color: #333333; }
 				</style>
-				<span class="big-title-big"><a class="custom-lnk" title="Relaunch Specials" href="https://www.visual-you.com/catalog/coupons-specials-ezp-23">Halloween Specials</a> ends in</span>
+				<span class="big-title-big"><a class="custom-lnk" title="Relaunch Specials" href="https://www.visual-you.com/catalog/corgi-aid-fundraiser-c-202/?page=Corgi%20Aid%20Fundraiser">Fundraiser</a> ends in</span>
 				<div class="flip-countdown countdown-days" id="clock">
 					<div class="unit-wrap">
 						<div class="days">										
@@ -226,7 +226,7 @@
 					</div>
 				</div>
 				<script type="text/javascript">
-					var productsDateTimeTo = {};productsDateTimeTo["2015-10-27 00:30:00"] = "clock";
+					var productsDateTimeTo = {};productsDateTimeTo["2015-11-23 00:30:00"] = "clock";
 					var dateTimeTo = false;
 					jQueryDD.each(productsDateTimeTo, function(time, product_ids) {
 						dateTimeTo = time;
