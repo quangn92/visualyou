@@ -78,8 +78,8 @@
   define('BOX_HEADING_MANUFACTURERS', 'Manufacturers');
 
 // whats_new box text in sideboxes/whats_new.php
-  define('BOX_HEADING_WHATS_NEW', 'New Arrivals');
-  define('CATEGORIES_BOX_HEADING_WHATS_NEW', 'NEW ARRIVALS');
+  define('BOX_HEADING_WHATS_NEW', 'New');
+  define('CATEGORIES_BOX_HEADING_WHATS_NEW', 'NEW');
 
   define('BOX_HEADING_FEATURED_PRODUCTS', 'Featured');
   define('CATEGORIES_BOX_HEADING_FEATURED_PRODUCTS', 'Featured Products');
@@ -484,7 +484,7 @@
 
   define('TABLE_HEADING_FEATURED_PRODUCTS','FEATURED PRODUCTS');
 
-  define('TABLE_HEADING_NEW_PRODUCTS', 'NEW ARRIVALS');
+  define('TABLE_HEADING_NEW_PRODUCTS', 'NEW');
   define('TABLE_HEADING_NEW_PRODUCTS_RELOADED', 'NEW PRODUCTS');
   define('TABLE_HEADING_UPCOMING_PRODUCTS', 'Upcoming Products');
   define('TABLE_HEADING_DATE_EXPECTED', 'Date Expected');

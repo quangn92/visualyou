@@ -20,8 +20,8 @@
 // $Id: products_new.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('NAVBAR_TITLE', 'New Arrivals');
-define('HEADING_TITLE', 'New Arrivals');
+define('NAVBAR_TITLE', 'New');
+define('HEADING_TITLE', 'New');
 
 define('TEXT_DATE_ADDED', 'Date Added:');
 define('TEXT_MANUFACTURER', 'Manufacturer:');
