@@ -52,7 +52,7 @@
 		   	<?php if (EZPAGES_STATUS_HEADER == '1' or (EZPAGES_STATUS_HEADER == '2' and (strstr(
                     EXCLUDE_ADMIN_IP_FOR_MAINTENANCE, $_SERVER['REMOTE_ADDR'])))) { ?>
                      <li id='ezpages'>
-                         <a href="https://www.visual-you.com/catalog/more-c-198/">
+                         <a style="color:#37a5dc" href="https://www.visual-you.com/catalog/more-c-198/">
                           <?php echo HEADER_TITLE_EZPAGES; ?>
                          </a>
                          <ul class="nav-child unstyled"> 
