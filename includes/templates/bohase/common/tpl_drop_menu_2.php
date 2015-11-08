@@ -31,7 +31,6 @@
 			<?php 
 				$specials_link .= '<li><a class="category-links" href="' . zen_href_link(FILENAME_SPECIALS) . '"><font color="#FF3D3D">SALE</font></a></li>';
 				$new_product_link .= '<li><a class="category-links" href="' . zen_href_link(FILENAME_PRODUCTS_NEW) . '">' . CATEGORIES_BOX_HEADING_WHATS_NEW . '</a></li>';
-				echo $specials_link;
 				echo $new_product_link;
 			?>
 			
