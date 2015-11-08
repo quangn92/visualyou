@@ -305,7 +305,36 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
 			<div class="container-class <?php echo $container_class; ?>">
 				<div class="navbar-header">
                    	<div class="logo">
-						<div style="position: relative; width: 25%; height: 134px; float:left;"></div>
+                        <div style="position: relative; width: 25%; height: 134px; float:left;">
+                            <div style="margin-top: 25px;text-align: left;">
+                                <link href="/catalog/includes/templates/bohase/css/dailydeal-flip-countdown.css" rel="stylesheet" type="text/css" media="all">
+                                <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Unica+One:400|Lobster+Two">
+                                <script type="text/javascript">
+                                    function togglediv(id) {
+                                        var div = document.getElementById(id);
+                                        div.style.display = div.style.display == "none" ? "block" : "none";
+                                    }
+
+                                    setInterval(
+                                        function(){ 
+                                            togglediv('int-shipping');  
+                                            togglediv('us-shipping'); 
+                                        }, 3000);
+                                </script>
+                                <span class="big-title-big" id="int-shipping" style="display:none;">
+                                <h3 style="color:red;">Free Shipping</h3>
+                                <p style="font-size:15px;">on all INT order <strike>$110</strike> $80+</p>
+                                    <p style="font-size:10px;"><a href="https://www.visual-you.com/catalog/shippinginfo"><u>DETAILS</u></a></p>
+                                </span>
+
+                                <span class="big-title-big" id="us-shipping" style="display:block;">
+                                <h3 style="color:red;">Free Shipping</h3>
+                                <p style="font-size:15px;">on all US order <strike>$85</strike> $50+</p>
+                                <p style="font-size:10px;"><a href="https://www.visual-you.com/catalog/shippinginfo"><u>DETAILS</u></a></p>
+                                </span>
+
+                            </div> 
+</div>
 						<div style="position: relative; width: 50%; height: 100%; float: left;">
 							<a class="custom-navbar-brand" href="#">
 								<img alt="<?php if($logo_image!=NULL){ echo "logo"; } ?>" src="<?php echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'images').'/logo/'.$logo_image;?>" />
