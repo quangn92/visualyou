@@ -28,11 +28,11 @@
               	</a>
           	</li><?php */?>
             <!--Categories Link in Menu-->
-			<?php 
-				$specials_link .= '<li><a class="category-links" href="' . zen_href_link(FILENAME_SPECIALS) . '"><font color="#FF3D3D">SALE</font></a></li>';
-				$new_product_link .= '<li><a class="category-links" href="' . zen_href_link(FILENAME_PRODUCTS_NEW) . '">' . CATEGORIES_BOX_HEADING_WHATS_NEW . '</a></li>';
-				echo $new_product_link;
-			?>
+        <?php 
+            $specials_link .= '<li><a class="category-links" href="' . zen_href_link(FILENAME_SPECIALS) . '"><font color="#FF3D3D">SALE</font></a></li>';
+            $new_product_link .= '<li><a class="category-links" href="' . zen_href_link(FILENAME_PRODUCTS_NEW) . '"><i class="fa fa-star-o"></i> ' . CATEGORIES_BOX_HEADING_WHATS_NEW . '</a></li>';
+            echo $new_product_link;
+        ?>
 			
 			<?php			
          		// load the UL-generator class and produce the menu list dynamically from there
