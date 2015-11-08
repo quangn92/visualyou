@@ -307,8 +307,6 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                    	<div class="logo">
                         <div style="position: relative; width: 25%; height: 134px; float:left;">
                             <div style="margin-top: 25px;text-align: left;">
-                                <link href="/catalog/includes/templates/bohase/css/dailydeal-flip-countdown.css" rel="stylesheet" type="text/css" media="all">
-                                <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Unica+One:400|Lobster+Two">
                                 <script type="text/javascript">
                                     function togglediv(id) {
                                         var div = document.getElementById(id);
@@ -321,17 +319,19 @@ if (!isset($flag_disable_header) || !$flag_disable_header) {
                                             togglediv('us-shipping'); 
                                         }, 3000);
                                 </script>
-                                <span class="big-title-big" id="int-shipping" style="display:none;">
+                                <font face="Calibri">
+                                <div class="shipping" id="int-shipping" style="display:none;">
                                 <h3 style="color:red;">Free Shipping</h3>
-                                <p style="font-size:15px;">on all INT order <strike>$110</strike> $80+</p>
-                                    <p style="font-size:10px;"><a href="https://www.visual-you.com/catalog/shippinginfo"><u>DETAILS</u></a></p>
-                                </span>
+                                <p style="font-size:15px;">on all INT. orders <strike>$110</strike> $80+</p>
+                                    <p style="font-size:10px;"><a href="https://www.visual-you.com/catalog/coupons-specials-ezp-23"><u>DETAILS</u></a></p>
+                                </div>
 
-                                <span class="big-title-big" id="us-shipping" style="display:block;">
+                                <div class="shipping" id="us-shipping" style="display:block;">
                                 <h3 style="color:red;">Free Shipping</h3>
-                                <p style="font-size:15px;">on all US order <strike>$85</strike> $50+</p>
-                                <p style="font-size:10px;"><a href="https://www.visual-you.com/catalog/shippinginfo"><u>DETAILS</u></a></p>
-                                </span>
+                                <p style="font-size:15px;">on all U.S. orders <strike>$85</strike> $50+</p>
+                                <p style="font-size:10px;"><a href="https://www.visual-you.com/catalog/coupons-specials-ezp-23"><u>DETAILS</u></a></p>
+                                </div>
+                                </font>
 
                             </div> 
 </div>
