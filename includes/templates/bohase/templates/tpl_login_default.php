@@ -10,7 +10,10 @@
  */
 ?>
 <div class="centerColumn" id="loginDefault">
-	<header>
+    <header>
+        <div>
+        <img style="display:block;margin:auto;" src="https://www.visual-you.com/images/visualyou_signupbanner_10off.png" >
+        </div>
 		<h4 id="loginDefaultHeading"><?php echo HEADING_TITLE; ?></h4>
 	</header>
 	<?php if ($messageStack->size('login') > 0) echo $messageStack->output('login'); ?>
