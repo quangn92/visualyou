@@ -69,7 +69,7 @@
 						<div class="field">
 							<!--Search Bar-->
 							<?php
-							   $text = str_replace("ENTER SEARCH KEYWORDS HERE", "Search entire store here..", "ENTER SEARCH KEYWORDS HERE");
+							   $text = str_replace("ENTER SEARCH KEYWORDS HERE", "Search...", "ENTER SEARCH KEYWORDS HERE");
 							   $content = "";
 							   $content .= zen_draw_form('quick_find_header', zen_href_link
 										  (FILENAME_ADVANCED_SEARCH_RESULT, '', 'SSL', false), 'get');
