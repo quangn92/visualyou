@@ -8,6 +8,11 @@
  */
 require(DIR_WS_MODULES . zen_get_module_directory('footer.php'));
 ?>
+
+<!--bof back in stock popup-->
+<?php require($template->get_template_dir('tpl_modules_back_in_stock_fancybox.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_back_in_stock_fancybox.php'); ?>
+<!--eof back in stock popup-->
+
 <?php
 if (!$flag_disable_footer) {
 	$cat_slide = "select * from ".DB_PREFIX."manufacturers ORDER BY RAND()";
@@ -290,7 +295,7 @@ if (!$flag_disable_footer) {
 </footer>
 <!-- Zenshoppe JS Files -->
 <!-- Google Jquery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Google Jquery Ends -->
 <?php if ($this_is_home_page) { ?>
 	<script src="<?php  echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'jscript').'/jquery.easing.1.3.js'?>" type="text/javascript"></script>
@@ -324,7 +329,6 @@ if (!$flag_disable_footer) {
 <script src="<?php  echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'jscript').'/wow.min.js'?>" type="text/javascript"></script>
 <!-- JQuery Lightbox JS and Cloud Zoom JS-->  
 <?php if (in_array($current_page_base,explode(",",'product_info,product_reviews_info,product_reviews,product_reviews_write'))) { ?>
-<script src="<?php echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'jscript').'/jscript_jquery_1-4-4.js'?>" type="text/javascript"></script>
 <script src="<?php  echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'jscript').'/cloud-zoom.1.0.3.js'?>" type="text/javascript"></script>
 <script type="text/javascript">
 //Cloud Zoom

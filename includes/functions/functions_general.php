@@ -1151,10 +1151,19 @@ if (!defined('IS_ADMIN_FLAG')) {
       $return_button = '<a href="' . zen_href_link(FILENAME_CONTACT_US, '', 'SSL') . '">' . TEXT_CALL_FOR_PRICE . '</a>';
       break;
     case ($button_check->fields['products_quantity'] <= 0 and SHOW_PRODUCTS_SOLD_OUT_IMAGE == '1'):
-      if ($_GET['main_page'] == zen_get_info_page($product_id)) {
-        $return_button = zen_image_button(BUTTON_IMAGE_SOLD_OUT, BUTTON_SOLD_OUT_ALT);
-      } else {
-        $return_button = zen_image_button(BUTTON_IMAGE_SOLD_OUT_SMALL, BUTTON_SOLD_OUT_SMALL_ALT);
+        if ($_GET['main_page'] == zen_get_info_page($product_id)) {
+            if(BACK_IN_STOCK_ENABLE == "true") {
+                $return_button = '<a class="back-in-stock-listing-popup-link" href="#back-in-stock-popup-wrapper">' . BACK_IN_STOCK_LINK . '</a>';
+                $return_button .= zen_draw_hidden_field('bis-product-id', (int) $product_id, 'class="bis-product-id"');
+            } else {
+                $return_button = zen_image_button(BUTTON_IMAGE_SOLD_OUT_SMALL, BUTTON_SOLD_OUT_SMALL_ALT);
+            }
+        } else {
+            if(BACK_IN_STOCK_ENABLE == "true") {
+                $return_button = '<a class="back-in-stock-listing-popup-link" href="#back-in-stock-popup-wrapper">' . BACK_IN_STOCK_LINK . '</a>';
+                $return_button .= zen_draw_hidden_field('bis-product-id', (int) $product_id, 'class="bis-product-id"');
+            } else {
+                $return_button = zen_image_button(BUTTON_IMAGE_SOLD_OUT_SMALL, BUTTON_SOLD_OUT_SMALL_ALT);                                                                }
       }
       break;
     default:
