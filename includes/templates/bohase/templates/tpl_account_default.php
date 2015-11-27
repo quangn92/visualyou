@@ -94,17 +94,21 @@
                     <?php } // endif don't show unsubscribe or notification ?>
                 </ul>
 			</div>
-		</div>
+        </div>
 <?php
 // only show when there is a GV balance
   if ($customer_has_gv_balance ) {
 ?>
-<div id="sendSpendWrapper">
+<div id="sendSpendWrapper" class="back">
+    <div class="content">
+    <h4><?php echo BOX_HEADING_GIFT_VOUCHER; ?></h4>
 <?php require($template->get_template_dir('tpl_modules_send_or_spend.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_send_or_spend.php'); ?>
+    </div>
 </div>
 <?php
   }
 ?>
+
 <br class="clearBoth" />
 </div>
 </div>
