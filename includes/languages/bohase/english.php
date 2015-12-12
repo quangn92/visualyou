@@ -95,6 +95,7 @@
 // specials box text in sideboxes/specials.php
   define('BOX_HEADING_SPECIALS', 'Specials');
   define('CATEGORIES_BOX_HEADING_SPECIALS','Specials');
+  define('CATEGORIES_BOX_HEADING_WEB_SPECIALS','Web Specials');
 
 // reviews box text in sideboxes/reviews.php
   define('BOX_HEADING_REVIEWS', 'Reviews');

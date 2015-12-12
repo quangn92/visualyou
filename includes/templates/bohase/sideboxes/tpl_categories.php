@@ -118,10 +118,9 @@
 		$content .= '<li><a class="category-links" href="https://www.visual-you.com/catalog/more-c-198/">More</a></li>' . "\n";
 		
 		$url_string = explode('/', $_SERVER['REQUEST_URI']);
-		if ($current_category_id == '198' or $current_category_id == '9' or $url_string[2] == 'coupons-specials-ezp-23.html') {
+		if ($current_category_id == '198' or $current_category_id == '9') {
 
 			$content .= '<li><a class="category-products" href="https://www.visual-you.com/catalog/more-c-198/mystery-bags-c-198_9/"><i class="fa fa-angle-right"></i>Mystery Bags</a></li>' . "\n";
-            $content .= '<li><a class="category-links" href="https://www.visual-you.com/catalog/coupons-specials-ezp-23.html"><i class="fa fa-angle-right"></i>Coupons & Specials</a></li>' . "\n";
 		}
 		$content .= '</ul>' . "\n";
 	}

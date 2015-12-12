@@ -52,7 +52,7 @@
 		   	<?php if (EZPAGES_STATUS_HEADER == '1' or (EZPAGES_STATUS_HEADER == '2' and (strstr(
                     EXCLUDE_ADMIN_IP_FOR_MAINTENANCE, $_SERVER['REMOTE_ADDR'])))) { ?>
                      <li id='ezpages'>
-                         <a style="color:#37a5dc" href="https://www.visual-you.com/catalog/more-c-198/">
+                         <a href="https://www.visual-you.com/catalog/more-c-198/">
                           <?php echo HEADER_TITLE_EZPAGES; ?>
                          </a>
                          <ul class="nav-child unstyled"> 
@@ -61,7 +61,11 @@
                          </ul>    
             		</li>  
            	<?php } ?>
-            <!--EZ Pages Menu Ends Here-->
+	    <!--EZ Pages Menu Ends Here-->
+	    <?php 
+            $website_special .= '<li><a class="category-links" href="https://www.visual-you.com/catalog/web-specials-ezp-23"><font color="#01B297">' . CATEGORIES_BOX_HEADING_WEB_SPECIALS . '</font></a></li>';
+	    echo $website_special;
+	    ?>
           </ul>
 		  <ri id="custom-cnt-search" class="cnt-search">
 				<div class="input-group">
