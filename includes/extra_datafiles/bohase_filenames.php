@@ -48,6 +48,7 @@ define('FILENAME_CHECKOUT_SUCCESS', 'checkout_success');
 define('FILENAME_CONDITIONS', 'conditions');
 define('FILENAME_CONFIGURATION', 'configuration');
 define('FILENAME_CONTACT_US', 'contact_us');
+define('FILENAME_COLLABORATIONS', 'collaborations');
 define('FILENAME_COOKIE_USAGE', 'cookie_usage');
 define('FILENAME_COUNTRIES', 'countries');
 define('FILENAME_COUPON_ADMIN', 'coupon_admin');
@@ -69,6 +70,7 @@ define('FILENAME_DEFINE_FOOTER_SOCIAL_NEWSLETTER_COLUMN', 'define_footer_social_
 define('FILENAME_DEFINE_CHECKOUT_SUCCESS', 'define_checkout_success');
 define('FILENAME_DEFINE_CONDITIONS', 'define_conditions');
 define('FILENAME_DEFINE_CONTACT_US', 'define_contact_us');
+define('FILENAME_DEFINE_COLLABORATIONS', 'define_collaborations');
 define('FILENAME_DEFINE_DISCOUNT_COUPON', 'define_discount_coupon');
 define('FILENAME_DEFINE_PAGE_2', 'define_page_2');
 define('FILENAME_DEFINE_PAGE_3', 'define_page_3');

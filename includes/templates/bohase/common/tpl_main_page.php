@@ -45,7 +45,7 @@
   if (in_array($current_page_base,explode(",",'products_new,products_all,specials,featured_products,checkout_shipping_address,checkout_payment,checkout_shipping,checkout_payment_address,checkout_confirmation,advanced_search_result,password_forgotten,account,account_history,account_history_info,account_edit,address_book,address_book_process,account_password,account_newsletters,account_notifications,gv_faq,gv_redeem,discount_coupon,advanced_search,checkout_success,time_out,page_not_found,product_reviews_write,reviews,product_reviews,product_reviews_info,logoff,create_account_success')) ) {
 	$flag_disable_right = true;
   }
-  if (in_array($current_page_base,explode(",",'product_info,login,create_account,shopping_cart,contact_us,compare,wishlist'))) {
+  if (in_array($current_page_base,explode(",",'product_info,login,create_account,shopping_cart,collaborations,contact_us,compare,wishlist'))) {
 		$flag_disable_left = true;
 		$flag_disable_right = true;
 	}
