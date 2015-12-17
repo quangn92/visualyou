@@ -63,7 +63,7 @@
            	<?php } ?>
 	    <!--EZ Pages Menu Ends Here-->
 	    <?php 
-            $website_special .= '<li><a class="category-links" href="https://www.visual-you.com/catalog/web-specials-ezp-23"><font color="#01B297">' . CATEGORIES_BOX_HEADING_WEB_SPECIALS . '</font></a></li>';
+            $website_special .= '<li><a class="category-links" href="https://www.visual-you.com/catalog/web-specials-ezp-23"><font color="#37DCC0">' . CATEGORIES_BOX_HEADING_WEB_SPECIALS . '</font></a></li>';
 	    echo $website_special;
 	    ?>
           </ul>
