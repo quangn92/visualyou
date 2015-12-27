@@ -373,3 +373,22 @@ function usu_get_configuration_title($key, $default = null) {
 	}
 	return $default;
 }
+
+// This function is available for use on the catalog side of Zen Cart and
+// needed on the admin side for Ultimate URLs to lookup the product_info page.
+if(!function_exists('zen_get_info_page')) {
+    function zen_get_info_page($zf_product_id) {
+        global $db;
+        $sql = "select products_type from " . TABLE_PRODUCTS . " where products_id = '" . (int)$zf_product_id . "'";
+        $zp_type = $db->Execute($sql);
+        if ($zp_type->RecordCount() == 0) {
+            return 'product_info';
+        }
+        else {
+            $zp_product_type = $zp_type->fields['products_type'];
+            $sql = "select type_handler from " . TABLE_PRODUCT_TYPES . " where type_id = '" . (int)$zp_product_type . "'";
+            $zp_handler = $db->Execute($sql);
+            return $zp_handler->fields['type_handler'] . '_info';
+        }
+    }
+}
