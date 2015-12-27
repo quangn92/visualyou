@@ -140,14 +140,6 @@ function couponpopupWindow(url) {
         
         <td valign="top"><table border="0" cellpadding="0" cellspacing="2">
           <tr>
-            <td class="invoiceHeading" align="left" valign="top"><?php echo HEADER_PHONE; ?></td>
-            <td class="invoiceHeading" align="left" valign="top"><?php echo STORE_PHONE; ?></td>
-          </tr>
-          <tr>
-            <td class="invoiceHeading" align="left" valign="top"><?php echo HEADER_FAX; ?></td>
-            <td class="invoiceHeading" align="left" valign="top"><?php echo STORE_FAX; ?></td>
-          </tr>
-          <tr>
             <td class="invoiceHeading" align="left" valign="bottom"><?php echo $prev_button; ?></td>
             <td class="invoiceHeading" align="right" valign="bottom"><?php echo $next_button; ?></td>
           </tr>
@@ -375,13 +367,6 @@ function couponpopupWindow(url) {
          '            <td align="right" class="printMain">&nbsp;</td>' . "\n" .
          '          </tr>' . "\n";
 
-    echo '          <tr>' . "\n" .
-         '            <td align="right" class="ot-tax-TextPrint"><strong>'. ENTRY_AMOUNT_APPLIED_CUST .' (' . $cu.')'. '</strong></td>' . "\n" .
-         '            <td align="right" class="printMain"><strong>' . $currencies->format($so->amount_applied, true, $order->info['currency'], $order->info['currency_value']) . '</strong></td>' . "\n" .
-         '          </tr>' . "\n";
-
-    echo '          <tr>' . "\n" .
-         '            <td align="right" class="ot-tax-TextPrint"><strong>'. ENTRY_BALANCE_DUE_CUST .' (' . $cu.')'. '</strong></td>' . "\n" .
          '            <td align="right" class="printMain"><strong>' . $currencies->format($so->balance_due, true, $order->info['currency'], $order->info['currency_value']) . '</strong></td>' . "\n" .
          '          </tr>' . "\n";
 ?>

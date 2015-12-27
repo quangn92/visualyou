@@ -201,28 +201,9 @@
 				</td>
 			</tr>
 			<tr>
-				<td align="right" class="ot-tax-TextPrint"><?php echo ENTRY_AMOUNT_APPLIED_CUST .' (' . $cu.')' ; ?></td>
-				<td align="right" class="printMain"><strong><?php echo $currencies->format($so->amount_applied, true, $order->info['currency'], $order->info['currency_value']); ?></strong></td>
-			</tr>
-			<tr>
-				<td align="right" class="ot-tax-TextPrint"><?php echo ENTRY_BALANCE_DUE_CUST .' (' . $cu.')'; ?></td>
-				<td align="right" class="printMain"><strong><?php echo $currencies->format($so->balance_due, true, $order->info['currency'], $order->info['currency_value']); ?></strong></td>
-			</tr>
-
-			<tr>
 				<td align="right">&nbsp;</td>
 				<td align="right">&nbsp;</td>
 			</tr>
-
-			<tr>
-				<td align="right" class="ot-tax-TextPrint"><?php echo ENTRY_AMOUNT_APPLIED_SHOP; ?></td>
-				<td align="right" class="printMain"><strong><?php echo $currencies->format($so->amount_applied); ?></strong></td>
-			</tr>
-			<tr>
-				<td align="right" class="ot-tax-TextPrint"><?php echo ENTRY_BALANCE_DUE_SHOP; ?></td>
-				<td align="right" class="printMain"><strong><?php echo $currencies->format($so->balance_due); ?></strong></td>
-			</tr>
-
 
         </table></td>
       </tr>

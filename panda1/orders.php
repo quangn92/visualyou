@@ -1222,25 +1222,9 @@ function couponpopupWindow(url) {
 <!-- EOF added to get currency type and value for totals -->
 				</td>
 			</tr>
-			<tr>               
-                <td align="right" class="ot-tax-Text"><?php echo ENTRY_AMOUNT_APPLIED_CUST .' (' . $cu.')' ; ?></td>
-                <td align="right" class="ot-tax-Amount"><?php echo $currencies->format($so->amount_applied, true, $order->info['currency'], $order->info['currency_value']); ?></td>
-			</tr>
-			<tr>
-                <td align="right" class="ot-tax-Text"><?php echo ENTRY_BALANCE_DUE_CUST .' (' . $cu.')'; ?></td>
-                <td align="right" class="ot-tax-Amount"><?php echo $currencies->format($so->balance_due, true, $order->info['currency'], $order->info['currency_value']); ?></td>
-			</tr>
 			<tr>
 				<td align="right">&nbsp;</td>
 				<td align="right">&nbsp;</td>
-			</tr>
-			<tr>               
-                <td align="right" class="ot-tax-Text"><?php echo ENTRY_AMOUNT_APPLIED_SHOP; ?></td>
-                <td align="right" class="ot-tax-Amount"><?php echo $amount_applied; ?></td>
-			</tr>
-			<tr>
-                <td align="right" class="ot-tax-Text"><?php echo ENTRY_BALANCE_DUE_SHOP ; ?></td>
-                <td align="right" class="ot-tax-Amount"><?php echo $balance_due; ?></td>
 			</tr>
         <table>
 			<tr>
