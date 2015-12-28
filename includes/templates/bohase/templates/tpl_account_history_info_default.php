@@ -115,7 +115,15 @@
                 <tr class="user-accounthistory">
                     <td><?php echo zen_date_short($statuses['date_added']); ?></td>
                     <td><?php echo $statuses['orders_status_name']; ?></td>
-                    <td><?php echo (empty($statuses['comments']) ? '&nbsp;' : nl2br(zen_output_string_protected($statuses['comments']))); ?></td> 
+                    <?php
+                        $display_track_id = '';
+                        $display_track_id .= (empty($statuses['track_id1']) ? '' : "<b>" . CARRIER_NAME_1 . "</b>" . ":&nbsp;&nbsp;<a href=" . CARRIER_LINK_1 . nl2br(zen_output_string_protected($statuses['track_id1'])) . ' target="_blank">' . nl2br(zen_output_string_protected($statuses['track_id1'])) . "</a>" );
+                        $display_track_id .= (empty($statuses['track_id2']) ? '' : "<b>" . CARRIER_NAME_2 . "</b>" . ":&nbsp;&nbsp;<a href=" . CARRIER_LINK_2 . nl2br(zen_output_string_protected($statuses['track_id2'])) . ' target="_blank">' . nl2br(zen_output_string_protected($statuses['track_id2'])) . "</a>" );
+                        $display_track_id .= (empty($statuses['track_id3']) ? '' : "<b>" . CARRIER_NAME_3 . "</b>" . ":&nbsp;&nbsp;<a href=" . CARRIER_LINK_3 . nl2br(zen_output_string_protected($statuses['track_id3'])) . ' target="_blank">' . nl2br(zen_output_string_protected($statuses['track_id3'])) . "</a>" );
+                        $display_track_id .= (empty($statuses['track_id4']) ? '' : "<b>" . CARRIER_NAME_4 . "</b>" . ":&nbsp;&nbsp;<a href=" . CARRIER_LINK_4 . nl2br(zen_output_string_protected($statuses['track_id4'])) . ' target="_blank">' . nl2br(zen_output_string_protected($statuses['track_id4'])) . "</a>" );
+                        $display_track_id .= (empty($statuses['track_id5']) ? '' : "<b>" . CARRIER_NAME_5 . "</b>" . ":&nbsp;&nbsp;<a href=" . CARRIER_LINK_5 . nl2br(zen_output_string_protected($statuses['track_id5'])) . ' target="_blank">' . nl2br(zen_output_string_protected($statuses['track_id5'])) . "</a>" );
+                    ?> 
+                        <td><?php echo (empty($statuses['comments']) ? '&nbsp;' : nl2br(zen_output_string_protected($statuses['comments']))); ?><br><?php echo $display_track_id; ?></td>
                  </tr>
 				<?php
                   }

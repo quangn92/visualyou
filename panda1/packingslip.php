@@ -273,7 +273,7 @@ div.form-separator {display: none;}
           $products = $db->Execute("SELECT products_image
                                     FROM " . TABLE_PRODUCTS . "
                                     WHERE products_id ='" . $order->products[$i]['id'] . "'");
-          echo '        <td class="dataTableContent" valign="middle">' . zen_image(DIR_WS_CATALOG . DIR_WS_IMAGES . $products->fields['products_image'] , $order->products[$i]['name'], SMALL_IMAGE_WIDTH, SMALL_IMAGE_HEIGHT) . '</a></td>';
+          echo '        <td class="dataTableContent" valign="middle">' . zen_image(DIR_WS_CATALOG . DIR_WS_IMAGES . $products->fields['products_image'] , $order->products[$i]['name'], 75, SMALL_IMAGE_HEIGHT) . '</a></td>';
         }
         echo '        <td class="dataTableContent" valign="middle">';
 		echo zen_image(DIR_WS_ICONS . 'tick.gif', ICON_TICK);
@@ -309,7 +309,7 @@ $so = new super_order($parent_child->fields['split_from_order']);
           $products = $db->Execute("SELECT products_image
                                     FROM " . TABLE_PRODUCTS . "
                                     WHERE products_id ='" . $order->products[$i]['id'] . "'");
-          echo '        <td class="dataTableContent" valign="middle">' . zen_image(DIR_WS_CATALOG . DIR_WS_IMAGES . $products->fields['products_image'] , $order->products[$i]['name'], SMALL_IMAGE_WIDTH, SMALL_IMAGE_HEIGHT) . '</a>&nbsp;</td>';
+          echo '        <td class="dataTableContent" valign="middle">' . zen_image(DIR_WS_CATALOG . DIR_WS_IMAGES . $products->fields['products_image'] , $order->products[$i]['name'], 75, 75) . '</a>&nbsp;</td>';
         }
         echo '        <td class="dataTableContent" valign="middle">';
 		echo zen_image(DIR_WS_ICONS . 'cross.gif', ICON_CROSS);
