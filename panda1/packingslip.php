@@ -276,7 +276,6 @@ div.form-separator {display: none;}
           echo '        <td class="dataTableContent" valign="middle">' . zen_image(DIR_WS_CATALOG . DIR_WS_IMAGES . $products->fields['products_image'] , $order->products[$i]['name'], 75, SMALL_IMAGE_HEIGHT) . '</a></td>';
         }
         echo '        <td class="dataTableContent" valign="middle">';
-		echo zen_image(DIR_WS_ICONS . 'tick.gif', ICON_TICK);
         echo $order->products[$i]['qty'] . '&nbsp;</td>' . "\n" .
              '        <td class="dataTableContent" valign="middle">' . $order->products[$i]['name'];
 
