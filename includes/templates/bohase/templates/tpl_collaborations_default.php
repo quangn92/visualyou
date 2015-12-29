@@ -95,23 +95,23 @@
                 
          <br class="clearBoth" />
             <div class="row message-detail">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactus-message" for="websites">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactus-message" for="website1">
                     <label><?php echo ENTRY_WEBSITES; ?></label>
-                    <?php echo zen_draw_input_field('websites', $websites, ' size="40" id="websites"'); ?>
+                    <?php echo zen_draw_input_field('website1', $website1, ' size="40" id="website1"'); ?>
                 </div>
             </div>
                 
          <br class="clearBoth" />
             <div class="row message-detail">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactus-message" for="websites">
-                    <?php echo zen_draw_input_field('websites', $websites, ' size="40" id="websites"'); ?>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactus-message" for="website2">
+                    <?php echo zen_draw_input_field('website2', $website2, ' size="40" id="website2"'); ?>
                 </div>
             </div>         
             
          <br class="clearBoth" />
             <div class="row message-detail">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactus-message" for="websites">
-                    <?php echo zen_draw_input_field('websites', $websites, ' size="40" id="websites"'); ?>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactus-message" for="website3">
+                    <?php echo zen_draw_input_field('website3', $website3, ' size="40" id="website3"'); ?>
                 </div>
             </div> 
             

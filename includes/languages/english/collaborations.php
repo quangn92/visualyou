@@ -10,7 +10,7 @@
 define('HEADING_TITLE', 'Collaborations');
 define('NAVBAR_TITLE', 'Collaborations');
 define('TEXT_SUCCESS', 'Your message has been successfully sent.');
-define('EMAIL_SUBJECT', 'Website Inquiry from ' . STORE_NAME);
+define('EMAIL_SUBJECT', 'Website Collaborations for ' . STORE_NAME);
 
 define('ENTRY_NAME', 'Full Name:');
 define('ENTRY_EMAIL', 'Email Address:');

@@ -18,6 +18,13 @@ $error = false;
 if (isset($_GET['action']) && ($_GET['action'] == 'send')) {
   $name = zen_db_prepare_input($_POST['contactname']);
   $email_address = zen_db_prepare_input($_POST['email']);
+  $url = zen_db_prepare_input($_POST['url']);
+  $subscriber = zen_db_prepare_input($_POST['numberofsubscriber']);
+  $website1 = zen_db_prepare_input($_POST['website1']);
+  $website2 = zen_db_prepare_input($_POST['website2']);
+  $website3 = zen_db_prepare_input($_POST['website3']);
+  $description = zen_db_prepare_input($_POST['description']);
+  $comment = zen_db_prepare_input($_POST['comment']);
   $location = zen_db_prepare_input(strip_tags($_POST['location']));
   $antiSpam = isset($_POST['should_be_empty']) ? zen_db_prepare_input($_POST['should_be_empty']) : '';
   $zco_notifier->notify('NOTIFY_COLLABORATIONS_CAPTCHA_CHECK');
@@ -45,33 +52,31 @@ if (isset($_GET['action']) && ($_GET['action'] == 'send')) {
       $customer_name = NOT_LOGGED_IN_TEXT;
     }
 
-    // use contact us dropdown if defined
-    if (COLLABORATIONS_LIST !=''){
-      $send_to_array=explode("," ,COLLABORATIONS_LIST);
-      preg_match('/\<[^>]+\>/', $send_to_array[$_POST['send_to']], $send_email_array);
-      $send_to_email= preg_replace ("/>/", "", $send_email_array[0]);
-      $send_to_email= trim(preg_replace("/</", "", $send_to_email));
-      $send_to_name = trim(preg_replace('/\<[^*]*/', '', $send_to_array[$_POST['send_to']]));
-    } else {  //otherwise default to EMAIL_FROM and store name
-    $send_to_email = trim(EMAIL_FROM);
-    $send_to_name =  trim(STORE_NAME);
-    }
-
+   $send_to_email = trim(EMAIL_FROM);
+   $send_to_name =  trim(STORE_NAME);
+   
     // Prepare extra-info details
     $extra_info = email_collect_extra_info($name, $email_address, $customer_name, $customer_email);
     // Prepare Text-only portion of message
     $text_message = OFFICE_FROM . "\t" . $name . "\n" .
     OFFICE_EMAIL . "\t" . $email_address . "\n\n" .
     '------------------------------------------------------' . "\n\n" .
-    strip_tags($_POST['location']) .  "\n\n" .
+    'Location:' . "\t" . strip_tags($_POST['location']) .  "\n\n" .
+    ENTRY_URL . "\t" . strip_tags($_POST['url']) .  "\n\n" .
+    ENTRY_SUBSCRIBER . "\t" . strip_tags($_POST['numberofsubscriber']) .  "\n\n" .
+    ENTRY_WEBSITES . "\nWebsite #1:" . strip_tags($_POST['website1']) .  "\nWebsite #2:" .
+    strip_tags($_POST['website2']) .  "\nWebsite #3:" .
+    strip_tags($_POST['website3']) .  "\n\n" .
+    ENTRY_DESCRIPTION . "\n" . strip_tags($_POST['description']) .  "\n\n" .
+    ENTRY_COMMENT . "\n" . strip_tags($_POST['comment']) .  "\n\n" .
     '------------------------------------------------------' . "\n\n" .
     $extra_info['TEXT'];
     // Prepare HTML-portion of message
     $html_msg['EMAIL_MESSAGE_HTML'] = strip_tags($_POST['location']);
-    $html_msg['CONTACT_US_OFFICE_FROM'] = OFFICE_FROM . ' ' . $name . '<br />' . OFFICE_EMAIL . '(' . $email_address . ')';
+    $html_msg['COLLABORATION_OFFICE_FROM'] = OFFICE_FROM . ' ' . $name . '<br />' . OFFICE_EMAIL . '(' . $email_address . ')';
     $html_msg['EXTRA_INFO'] = $extra_info['HTML'];
     // Send message
-    zen_mail($send_to_name, $send_to_email, EMAIL_SUBJECT, $text_message, $name, $email_address, $html_msg,'contact_us');
+    zen_mail($send_to_name, $send_to_email, EMAIL_SUBJECT, $text_message, $name, $email_address, $html_msg,'collaborations');
    }
     zen_redirect(zen_href_link(FILENAME_COLLABORATIONS, 'action=success', 'SSL'));
   } else {
@@ -94,18 +99,6 @@ if (isset($_GET['action']) && ($_GET['action'] == 'send')) {
 
 if (ENABLE_SSL == 'true' && $request_type != 'SSL') {
   zen_redirect(zen_href_link(FILENAME_COLLABORATIONS, '', 'SSL'));
-}
-
-// default email and name if customer is logged in
-if($_SESSION['customer_id']) {
-  $sql = "SELECT customers_id, customers_firstname, customers_lastname, customers_password, customers_email_address, customers_default_address_id
-          FROM " . TABLE_CUSTOMERS . "
-          WHERE customers_id = :customersID";
-
-  $sql = $db->bindVars($sql, ':customersID', $_SESSION['customer_id'], 'integer');
-  $check_customer = $db->Execute($sql);
-  $email_address = $check_customer->fields['customers_email_address'];
-  $name= $check_customer->fields['customers_firstname'] . ' ' . $check_customer->fields['customers_lastname'];
 }
 
 $send_to_array = array();
