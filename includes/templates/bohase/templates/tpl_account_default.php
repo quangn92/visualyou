@@ -95,6 +95,10 @@
                 </ul>
 			</div>
         </div>
+<div class="content">
+    <h4>TO TRACK ORDERS</h4>
+    <p>Please click on the ‘VIEW’ button to see your tracking information. Click on the tracking number to be redirected to the USPS website for up-to-date tracking details. Please allow up to 24hrs for the tracking details to become visible at the USPS website. </p>
+</div>
 <?php
 // only show when there is a GV balance
   if ($customer_has_gv_balance ) {

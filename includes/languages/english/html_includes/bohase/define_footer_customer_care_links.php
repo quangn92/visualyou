@@ -48,7 +48,7 @@
 
 					<a href="https://www.visual-you.com/catalog/account">
 
-						My Account
+					    Track Orders	
 
 					</a>
 
